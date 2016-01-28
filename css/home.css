@@ -5,13 +5,9 @@ html, body {
 
 .container {
   max-width: 100%;
-
-  /*margin: 0 auto;
-    padding: 0 10px;*/
 }
 
 .jumbotron {
-  /*background: url("cityscene.png") no-repeat center center;*/
   background-size: cover;
   height: 500px;
 }
@@ -119,4 +115,25 @@ div {
   letter-spacing: 2px;
   text-transform: uppercase;
   text-align: center;
+}
+
+#pig-avatar {
+  text-align: center;
+  display: inline-block;
+}
+
+#avatar-image {
+  background-color: white;
+  padding: 5px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.button {
+  background-color: #94E85F;
+  border-style: solid;
+  border-color: #2AAD81;
+  width: 20%;
+  margin: auto;
 }
