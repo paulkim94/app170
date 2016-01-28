@@ -25,7 +25,7 @@
       .jumbotron {
         /*background: url("cityscene.png") no-repeat center center;*/
         background-size: cover;
-        height: 800px;
+        height: 400px;
       }
       
       .header {
@@ -91,6 +91,17 @@
         text-transform: uppercase;
         font-size: 11px;
       }
+
+      .col {
+        width: 50%;
+        float: left;
+        background: pink;
+        height: 400px;
+      }
+
+      .tabs-bar {
+        background: blue;
+      }
     </style>
   </head>
   <body>
@@ -103,6 +114,14 @@
         </ul>
       </div>
     </div>
+
+    <div class="tabs-bar">
+      <div class="container">
+        <ul class="nav">
+          <li><a href="index.html">TABS BAR</a><li>
+        </ul>
+      </div>
+    </div>
     
     <div class="jumbotron">
       <div class="container">
@@ -110,6 +129,15 @@
           <h1>PIGGY</h1>
           <a class="btn-primary" href="src/signUp.html">Get Started</a>
         </div>
+      </div>
+    </div>
+
+    <div class="jumbotron">
+      <div class="col">
+        Container 1: Pig Avatar
+      </div>
+      <div class="col">
+        Container 2: Savings Goal Information
       </div>
     </div>
   </body>
