@@ -246,6 +246,11 @@
 .c100.big {
   font-size: 240px;
 }
+
+.c100.huge {
+  font-size: 320px;
+}
+
 .c100.small {
   font-size: 80px;
 }
@@ -1062,4 +1067,12 @@
 }
 .c100.orange.dark:hover > span {
   color: #e08833;
+}
+
+.c100.pink .bar,
+.c100.pink .fill {
+  border-color: #ffc0cb !important;
+}
+.c100.pink:hover > span {
+  color: black;
 }

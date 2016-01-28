@@ -13,7 +13,7 @@ html, body {
 .jumbotron {
   /*background: url("cityscene.png") no-repeat center center;*/
   background-size: cover;
-  height: 400px;
+  height: 500px;
 }
       
 header {
@@ -97,4 +97,26 @@ div {
   }
 }
 
+.indicatorContainer {
+  width: 320px; /* change hard coding and figure out how to make outer
+                 * div the same height/width of the inner div 
+                 */
+  padding-top: 20px;
+  margin: 0 auto;               
+}
+
+.weeklyIndicator {
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.currentSpendings {
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
 }
