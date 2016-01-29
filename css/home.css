@@ -12,6 +12,12 @@ html, body {
   background-size: cover;
   height: 600px;
 }
+
+.jumbotron2 {
+  font-family: 'Raleway', sans-serif;
+  background-size: cover;
+  height: 450px;
+}
       
 header {
   background-color: #333;
@@ -200,4 +206,18 @@ hr {
 
 .blue span {
     background-color: #34c2e3;   
+}
+
+.footer {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  background-color: #333;
+  height: 50px;
+  padding-top: 20px;
+}
+
+.footer a {
+  margin: 0 10px;
 }
