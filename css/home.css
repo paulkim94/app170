@@ -7,6 +7,14 @@ html, body {
   max-width: 100%;
 }
 
+/* From Bootstrap */
+.container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .jumbotron {
   font-family: 'Raleway', sans-serif;
   background-size: cover;
@@ -25,13 +33,43 @@ header {
   padding-bottom: 25px;
 }
 
-.nav {
+.nav-left, .nav-right {
   list-style-type: none; 
   margin: 0;
 
 }
 
-.nav li:first-child {
+.nav-left li {
+  font-size: 20px;
+  float: left;
+  color: #fff;
+  display: inline;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;        
+  font-size: 20px;
+  margin-right: 25px;
+  text-transform: uppercase;
+}
+
+.nav-right li {
+  font-size: 20px;
+  float: right;
+  color: #fff;
+  display: inline;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;        
+  font-size: 20px;
+  margin-right: 25px;
+  text-transform: uppercase;
+}
+
+.nav-left, .nav-right li:hover {
+  color: #333;
+  background-color: white;
+}
+
+
+/*.nav li:first-child {
   font-size: 20px;
   float: left;
 }
@@ -45,7 +83,7 @@ header {
   font-size: 20px;
   margin-right: 25px;
   text-transform: uppercase;
-}
+}*/
 
 a {
   color: #fff;

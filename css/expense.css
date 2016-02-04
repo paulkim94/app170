@@ -1,0 +1,175 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 100%;
+}
+
+/* From Bootstrap */
+.container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.jumbotron {
+  font-family: 'Raleway', sans-serif;
+  background-size: cover;
+  height: 80%;
+}
+      
+header {
+  background-color: #333;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.nav-left, .nav-right {
+  list-style-type: none; 
+  margin: 0;
+
+}
+
+.nav-left li {
+  font-size: 20px;
+  float: left;
+  color: #fff;
+  display: inline;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;        
+  font-size: 20px;
+  margin-right: 25px;
+  text-transform: uppercase;
+}
+
+.nav-right li {
+  font-size: 20px;
+  float: right;
+  color: #fff;
+  display: inline;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;        
+  font-size: 20px;
+  margin-right: 25px;
+  text-transform: uppercase;
+}
+
+
+.nav-left li a:hover {
+	background-color: red;
+}
+
+.nav-right li a:hover {
+	background-color: red;
+}
+/*.nav li:first-child {
+  font-size: 20px;
+  float: left;
+}
+
+.nav li{
+  float: right;
+  color: #fff;
+  display: inline;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;        
+  font-size: 20px;
+  margin-right: 25px;
+  text-transform: uppercase;
+}*/
+
+a {
+  color: #fff;
+}
+
+div {
+  overflow: hidden;
+}
+
+hr {
+  margin: 0;
+}
+
+.btn-primary {
+  background-color: #333;
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 1.3px;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 20px 30px;
+}
+
+.btnContainer {
+  padding: 20px 30px;
+  text-align: center;
+}
+
+.footer {
+  height: 10%;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  background-color: #333;
+  padding-top: 20px;
+}
+
+.footer a {
+  margin: 0 10px;
+}
+
+/* CSS for transactions table */
+#table-design {
+	margin-top: 1%;
+	margin-bottom: 1%;
+	margin-right: auto;
+	margin-left: auto;
+	width: 80%;
+	border: 1px solid #B0B0B0;
+
+	/* Font related */
+	font-size: 18px;
+}
+
+#table-design tbody {
+  /* Kind of irrelevant unless your .css is alreadt doing something else */
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+#table-design thead {
+  text-align: left;
+}
+
+#table-design thead th {
+  background: -moz-linear-gradient(top, #F0F0F0 0, #DBDBDB 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #F0F0F0), color-stop(100%, #DBDBDB));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F0F0F0', endColorstr='#DBDBDB', GradientType=0);
+  border: 1px solid #B0B0B0;
+  color: #444;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 3px 10px;
+}
+
+#table-design td {
+  padding: 3px 10px;
+
+}
+
+/*#table-design tr:nth-child(even) {
+  background: #F2F2F2;
+}*/
