@@ -11,8 +11,6 @@ html, body {
 
 /* From Bootstrap */
 .container-fluid {
-  padding-right: 15px;
-  padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -24,29 +22,83 @@ html, body {
 }
       
 header {
-  background-color: #333;
+  /*background-color: #333;
   padding-top: 25px;
-  padding-bottom: 25px;
+  padding-bottom: 25px;*/
 }
 
-.nav-left, .nav-right {
+@media only screen and (min-width: 900px) {
+.nav, .nav-right {
+  font-family: 'Raleway', sans-serif;
   list-style-type: none; 
   margin: 0;
+  padding: 0;
 
 }
 
-.nav-left li {
-  font-size: 20px;
+.nav {
+  background-color: #f5f5f5;
+  border-bottom: 5px solid #333;
   float: left;
-  color: #fff;
-  display: inline;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 600;        
-  font-size: 20px;
-  margin-right: 25px;
+  width: 100%;
+}
+
+.nav > li {
+  float: left;
+  margin-bottom: -5px;
+  border-bottom: 5px solid transparent;
+  text-align: left;
+}
+
+.nav li a {
+  display: block;
+  text-decoration: none;
+  white-space: normal;
+}
+
+.nav > li > a {
+  color: #333;
+  display: block;
+  font-size: 1.3em;
+  line-height: 50px;
+  padding: 0 15px;
   text-transform: uppercase;
 }
 
+.nav > li:hover > a, .nav > a:hover {
+  background-color: #F55856;
+  color: #fff;
+}
+
+.nav-right > li {
+  float: right;
+  margin-bottom: -5px;
+  border-bottom: 5px solid transparent;
+  text-align: right;
+}
+.nav-right li a {
+  display: block;
+  text-decoration: none;
+  white-space: normal;
+}
+
+.nav-right > li > a {
+  color: #333;
+  display: block;
+  font-size: 1.3em;
+  line-height: 50px;
+  padding: 0 15px;
+  text-transform: uppercase;
+}
+
+.nav-right > li:hover > a, .nav-right > a:hover {
+  background-color: #F55856;
+  color: #fff;
+}
+
+} /* end of @media query */
+
+/*
 .nav-right li {
   font-size: 20px;
   float: right;
@@ -57,16 +109,14 @@ header {
   font-size: 20px;
   margin-right: 25px;
   text-transform: uppercase;
-}
+}*/
 
 
-.nav-left li a:hover {
+/*.nav-left li a:hover {
 	background-color: red;
-}
+}*/
 
-.nav-right li a:hover {
-	background-color: red;
-}
+
 /*.nav li:first-child {
   font-size: 20px;
   float: left;
@@ -84,7 +134,7 @@ header {
 }*/
 
 a {
-  color: #fff;
+  /*color: #fff;*/
 }
 
 div {
@@ -113,7 +163,7 @@ hr {
 }
 
 .footer {
-  height: 10%;
+  height: 5%;
   text-align: center;
   text-transform: uppercase;
   font-family: 'Raleway', sans-serif;
@@ -123,6 +173,7 @@ hr {
 }
 
 .footer a {
+  color: #fff;
   margin: 0 10px;
 }
 
@@ -173,3 +224,22 @@ hr {
 /*#table-design tr:nth-child(even) {
   background: #F2F2F2;
 }*/
+
+@media only screen and (max-width: 900px) {
+
+.container-fluid {
+  background-color: #333;
+  text-align: center;
+}
+
+.nav, .nav-right {
+  list-style-type: none;
+  text-align: center;
+}
+
+a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+}

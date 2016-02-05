@@ -6,27 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <link href='https://fonts.googleapis.com/css?family=Raleway:400, 600' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
     <link rel="stylesheet" href="../css/expense.css">
-
   </head>
   <body>
 
     <header>
       <div class="container-fluid">
-        <ul class="nav-left">
-          <li>PIGGY</li> <!-- Brand Name -->
-          <li><a href="../index.html">Home</a></li>
+        <!--<a href="#" id="toggle">MENU</a>-->
+        <ul class="nav">
+          <li><a href="../index.html">PIGGY<a></li>
+          <li><a href="../index.html">Dashboard</a></li>
           <li><a href="#">Transactions</a></li>
           <li><a href="#">Analytics</a></li>
+          <ul class="nav-right">
+            <li><a href="#">Log Out</a></li>
+            <li><a href="#">Setting</a></li>
+          </ul>
         </ul>
-
-        <ul class="nav-right">
+      </div>
+        <!--<ul class="nav-right">
           
           <li><a href="#">Settings</a></li>
           <li><a href="#">Log Out</a></li>
-        </ul>
-      </div>
+        </ul>-->
     </header>
 
     <div class="jumbotron">
@@ -76,7 +80,6 @@
       <a href="#">Contact</a>
     </div>
 
-    <script>
-    </script>
+    <script src="../js/expense.js"></script>
   </body>
 </html>
