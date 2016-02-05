@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <link href='https://fonts.googleapis.com/css?family=Raleway:400, 600' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
     <link rel="stylesheet" href="css/circle.css">
     <link rel="stylesheet" href="css/home.css">
@@ -17,14 +18,16 @@
       <div class="container-fluid">
         <!--<a href="#" id="toggle">MENU</a>-->
         <ul class="nav">
-          <li><a href="../index.html">PIGGY<a></li>
-          <li><a href="../index.html">Dashboard</a></li>
-          <li><a href="#">Transactions</a></li>
+          <li><a href="index.html">PIGGY<a></li>
+          <li><a href="index.html">Dashboard</a></li>
+          <li><a href="src/expense.html">Transactions</a></li>
           <li><a href="#">Analytics</a></li>
-          <ul class="nav-right">
+          <li><a href="#">Log Out</a></li>
+          <li><a href="#">Setting</a></li>
+          <!--<ul class="nav-right">
             <li><a href="#">Log Out</a></li>
             <li><a href="#">Setting</a></li>
-          </ul>
+          </ul>-->
         </ul>
       </div>
     </header>
@@ -64,14 +67,14 @@
 
       <!-- Enter expense button -->
       <div class="btnContainer">
-        <a class="btn-primary" href="#">Enter Expense</a>
+        <a class="btn-primary" href="#">+ Add Spending</a>
       </div>
     </div>
 
     <hr>
 
     <div class="jumbotron2">
-      <div class="col" id="pig-avatar">
+      <div class="col1" id="pig-avatar">
         <h2>Piggy Jr.</h2>
         <div id ="avatar-image">
           <img src="images/piggy-avatar.png" alt="Pig Avatar" height="auto" width="50%" style="margin:auto">
@@ -84,9 +87,8 @@
         </div>
       </div>
 
-      <div class="col">
+      <div class="col2">
         <br><br><br><br>
-
         <h1 style="text-align: center"> 3 months until... </h1>
         <h2 style="text-align: center"> Vacation to NY <br><span style="font-size: 12px"><a href="#" style="color: black">Edit goal</a> | <a href="#" style="color: black">Delete goal</a></span> </h2>
 
