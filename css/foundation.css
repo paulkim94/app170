@@ -733,10 +733,10 @@ small {
   background-image: url('../images/piggybank.jpg');
   height: 620px;
   background-repeat: no-repeat;
-  -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-  background-size: cover;
+ -webkit-background-size: 100% auto;
+  -moz-background-size: 100% auto;
+  -o-background-size: 100% auto;
+   background-size: 100% auto;
   position: fixed;
   width: 100%;
 }
