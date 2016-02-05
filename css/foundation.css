@@ -730,13 +730,17 @@ small {
 
 .parallax-background {
   /*background-color: #0078A0;*/
-  background-image: url('../images/piggybank.jpg');
+  background-image: url('../images/piggybank.jpg'); 
+  top: 0;
+  left:0;
+  min-width: 100%;
+  min-height: 100%;
   height: 620px;
   background-repeat: no-repeat;
- -webkit-background-size: 100% auto;
-  -moz-background-size: 100% auto;
-  -o-background-size: 100% auto;
-   background-size: 100% auto;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   position: fixed;
   width: 100%;
 }
