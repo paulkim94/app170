@@ -1,35 +1,50 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Piggy Closet</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<title>Closet</title>
 
-  <link href='https://fonts.googleapis.com/css?family=Raleway:400, 600' rel='stylesheet' type='text/css'>
-
-  <link rel="stylesheet" href="../css/shop.css">
+		<!-- Bootstrap -->
+		<link href="../bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<link href="../css/footer.css" rel="stylesheet">
+  <!--  <link rel="stylesheet" href="../css/shop.css"> !-->
 
 </head>
 <body>
 
-    <header>
-      <div class="container-fluid">
-        <!--<a href="#" id="toggle">MENU</a>-->
-        <ul class="nav">
-          <li><a href="../index.html">PIGGY<a></li>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">PIGGY</a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
           <li><a href="../index.html">Dashboard</a></li>
           <li><a href="expense.html">Transactions</a></li>
           <li><a href="analytics.html">Analytics</a></li>
-          <li><a href="settings.html">Setting</a></li>
-          <li><a href="newSplash.html">Log Out</a></li>
-          
-          <!--<ul class="nav-right">
-            <li><a href="#">Log Out</a></li>
-            <li><a href="#">Setting</a></li>
-          </ul>-->
         </ul>
-      </div>
-    </header>
+        <!-- code for the right side of the navbar -->
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="settings.html">Settings</a></li>
+          <li><a href="#">Logout</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
 
   <div class="shop">
     <h1>Closet</h1>
@@ -48,12 +63,13 @@
   </div>
   </div>
 
-  <div class="footer">
-    <a href="#">About</a>
-    <a href="#">Help</a>
-    <a href="#">FAQ</a>
-    <a href="#">Contact</a>
-  </div>
+	<div class="footer">
+		<a href="footer.html"> About</a>
+		<a href="footer.html">| Help</a>
+		<a href="footer.html">| FAQ</a>
+		<a href="footer.html">| Contact </a>
+	</div>
+
 
   <script>
   </script>

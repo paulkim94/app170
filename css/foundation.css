@@ -728,13 +728,9 @@ small {
   font-size: 20px;
 }
 
-.parallax-background {
-  /*background-color: #0078A0;*/
+/**.parallax-background {
+  background-color: #0078A0;
   background-image: url('../images/piggybank.jpg'); 
-  top: 0;
-  left:0;
-  min-width: 100%;
-  min-height: 100%;
   height: 620px;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
@@ -743,7 +739,7 @@ small {
   background-size: cover;
   position: fixed;
   width: 100%;
-}
+}*/
 
 .intro-text {
   font-size: 50px;
@@ -1154,7 +1150,7 @@ button {
   position: relative;
   left: 25%; }
 
-  .wrapper {
+ /* .wrapper {
     text-align: center;
 }
 
