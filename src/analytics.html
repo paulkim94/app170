@@ -5,63 +5,84 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-		<title>Transaction</title>
+		<title>Analytics</title>
 
-		<!-- Bootstrap -->
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	    <script type="text/javascript">
+			google.charts.load("current", {packages:["corechart"]});
+			google.charts.setOnLoadCallback(drawChart);
+			function drawChart() {
+			var data = google.visualization.arrayToDataTable([
+			  ['Expense Category', 'Dollars Spent'],
+			  ['Necessities',     600],
+			  ['Leisure',      78],
+			  ['Clothes',  120],
+			  ['Food', 130],
+			]);
+
+			var options = {
+			  pieHole: 0.25,
+			  fontSize: 11
+			};
+
+			var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+			chart.draw(data, options);
+			}
+	    </script>
+
+    	<!-- Bootstrap -->
+		<link href="../bootstrap-3.3.6-dist/css/bootstrap.css" rel="stylesheet">
 		<link href="../bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-		<link href="../css/footer.css" rel="stylesheet">
-		<!-- <link href="css/circle.css" rel="stylesheet">
-		<link href="css/home.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/expense.css"> !-->
+		<link href="../css/analytics.css" rel="stylesheet">
+		<link href="../css/common.css" rel="stylesheet">
 
-
-  </head>
+ 	</head>
   <body>
 
     <nav class="navbar navbar-default">
-			<div class="container-fluid">
-			<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="#">PIGGY</a>
-				</div>
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">
-						<li><a href="../index.html">Dashboard</a></li>
-						<li><a href="expense.html">Transactions</a></li>
-						<li><a href="analytics.html">Analytics</a></li>
-					</ul>
-					<!-- code for the right side of the navbar -->
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="settings.html">Settings</a></li>
-						<li><a href="#">Logout</a></li>
-					</ul>
-				</div><!-- /.navbar-collapse -->
-			</div><!-- /.container-fluid -->
-		</nav>
+		<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">PIGGY</a>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a href="../index.html">Dashboard</a></li>
+					<li><a href="expense.html">Transactions</a></li>
+					<li><a href="analytics.html">Analytics</a></li>
+				</ul>
+				<!-- code for the right side of the navbar -->
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="settings.html">Settings</a></li>
+					<li><a href="#">Logout</a></li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
 
+	<h2 id="headerDonutChart">Category Chart</h2>
 
-    <div class="container">
-      <h1>Analytics</h1>
-      <p>To be continued.</p>
-    </div>
+    <div id="donutchart" style="width: 125%; height: 50%"></div>
 
-    <div class="footer">
-      <a href="footer.html"> About</a>
-      <a href="footer.html">| Help</a>
-      <a href="footer.html">| FAQ</a>
-      <a href="footer.html">| Contact </a>
-    </div>
+    <footer class="footer">
+		<div class="container-fluid">
+			<a href="footer.html">About</a>
+		    <a href="footer.html">Help</a>
+		    <a href="footer.html">FAQ</a>
+		    <a href="footer.html">Contact</a>
+		</div>
+	</footer>
 
-    <script>
-    </script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="../bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
   </body>
 </html>
