@@ -2,11 +2,13 @@
 	"storeItems": [
 		{
 			"ItemName": "Blue Shades", 
-			"ItemPrice": 123
+			"ItemImage": "../images/blue-shades-thumbnail.png",
+			"ItemPrice": 10
 		}, 
 		{
 			"ItemName": "Black Shades", 
-			"ItemPrice": 125
+			"ItemImage": "../images/blue-shades-thumbnail.png",
+			"ItemPrice": 10
 		}
 	]
 }

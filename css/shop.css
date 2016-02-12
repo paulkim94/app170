@@ -1,103 +1,17 @@
 html, body {
-  font-family: 'Raleway', sans-serif;
+  height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
 }
 
-.shop{
-  max-width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  text-align: center;
-}
-
-a {
-  color: #fff;
-}
-
-p {
-  font-size: 1em;
-}
-
-.tab {
-  font-family: 'Raleway', sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  width: 33%;
-  float: left;
-  background: #1DE9B6;
-  text-align: center; 
-  border-style: solid;
-  border-color: gray;
-  border-width: 1px;
-  margin-top: 1px;
-}
-
-.tab:hover {
-  border-style: solid;
-  border-color: black;
-  border-width: 1px;
-}
-
-div {
-  overflow: hidden;
-}
-
-.tabs-bar {
-  width: 95%;
-  margin: 0 auto;
-  height: 100%;
-}
-
-.tabs-bar a {
-  color: black;
-}
-
-@media only screen and (max-width: 905px) {
-  .tab {
-    width: 32%;
-  }
-}
-
-.indicatorContainer {
-  width: 320px; /* change hard coding and figure out how to make outer
-                 * div the same height/width of the inner div 
-                 */
-  padding-top: 20px;
-  margin: 0 auto;               
-}
-
-.info-bar {
-  width: 50%;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.col {
-  width: 50%;
-  height: 50px;
-  float: left;
-}
-
-#pig-avatar {
-  text-align: center;
-  display: inline-block;
-}
-
 #avatar-image {
-  background-color: white;
   width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 2%;
-  border-style: solid;
-  border-width: 1px;
 }
 
-hr {
-  margin: 0;
+.shop-item {
+  border-width: thin;
+  border-style: solid;
 }
 
 .btn-primary {
@@ -112,137 +26,55 @@ hr {
   padding: 20px 30px;
 }
 
-.btn-piggy {
-  background-color: #94E85F;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  letter-spacing: 1.3px;
-  text-decoration: none;
-  text-transform: uppercase;
-
-  padding: 10px 20px;
-
-  margin: 5px 0;
-  color: black;
-  border-style: solid;
-  border-width: 1px;
-  border-color: black;
-
-}
-
 .btnContainer {
   padding: 20px 30px;
   text-align: center;
 }
 
-.buttons {
-  padding: 11px 20px;
-  height: 50px;
+/* CSS for transactions table */
+#table-design {
+  margin-top: 1%;
+  margin-bottom: 1%;
+  margin-right: auto;
+  margin-left: auto;
+  width: 60%;
+  border: 1px solid #B0B0B0;
+
+  /* Font related */
+  font-size: 18px;
 }
 
-.progress-bar {
-    font-family: 'Raleway', sans-serif;
-    background-color: #1a1a1a;
-    height: 25px;
-    padding: 5px;
-    width: 350px;
-    margin: 50px 0;         
-    border-radius: 5px;
-    box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;   
-
-}
-
-.progress-bar span {
-    display: inline-block;
-    height: 100%;
-    border-radius: 3px;
-    box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
-    transition: width .4s ease-in-out;    
-}
-
-.blue span {
-    background-color: #34c2e3;   
-}
-
-.footer {
-  text-align: center;
-  text-transform: uppercase;
-  font-family: 'Raleway', sans-serif;
-  font-size: 20px;
-  background-color: #333;
-  height: 50px;
-  padding-top: 20px;
-}
-
-.footer a {
-  margin: 0 10px;
-}
-
-.nav, .nav-right {
-  font-family: 'Raleway', sans-serif;
-  list-style-type: none; 
+#table-design tbody {
+  /* Kind of irrelevant unless your .css is alreadt doing something else */
   margin: 0;
   padding: 0;
-
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
 }
 
-.nav {
-  background-color: #f5f5f5;
-  border-bottom: 5px solid #333;
-  float: left;
-  width: 100%;
-}
-
-.nav > li {
-  float: left;
-  margin-bottom: -5px;
-  border-bottom: 5px solid transparent;
+#table-design thead {
   text-align: left;
 }
 
-.nav li a {
-  display: block;
-  text-decoration: none;
-  white-space: normal;
+#table-design thead th {
+  background: -moz-linear-gradient(top, #F0F0F0 0, #DBDBDB 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #F0F0F0), color-stop(100%, #DBDBDB));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F0F0F0', endColorstr='#DBDBDB', GradientType=0);
+  border: 1px solid #B0B0B0;
+  color: #444;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 3px 10px;
 }
 
-.nav > li > a {
-  color: #333;
-  display: block;
-  font-size: 1.3em;
-  line-height: 50px;
-  padding: 0 15px;
-  text-transform: uppercase;
+#table-design td {
+  padding: 3px 10px;
+
 }
 
-.nav > li:hover > a, .nav > a:hover {
-  background-color: #F55856;
-  color: #fff;
-}
-
-.nav-right > li {
-  float: right;
-  margin-bottom: -5px;
-  border-bottom: 5px solid transparent;
-  text-align: right;
-}
-.nav-right li a {
-  display: block;
-  text-decoration: none;
-  white-space: normal;
-}
-
-.nav-right > li > a {
-  color: #333;
-  display: block;
-  font-size: 1.3em;
-  line-height: 50px;
-  padding: 0 15px;
-  text-transform: uppercase;
-}
-
-.nav-right > li:hover > a, .nav-right > a:hover {
-  background-color: #F55856;
-  color: #fff;
+table #editDeleteTransaction > a {
+  font-weight: bold;
 }
