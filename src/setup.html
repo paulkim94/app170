@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Account Setup</title>
+
+  <!-- Bootstrap -->
+  <link href="../bootstrap-3.3.6-dist/css/bootstrap.css" rel="stylesheet">
+  <link href="../bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/common.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/setup.css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div class="container-fluid" id="setup">
+      <div class="setup1">
+        <h1>Welcome to Piggy!</h1>
+        <p>We're going to help you save money for the things that matter to you.<br></p>
+        <form>
+          <h3>Step 1: Tell us about your goal.</h3>
+          <p>I want to save up $<input type="text" name="goalAmount" placeholder="Enter an amount"><br><br>for<input type="text" name="goalName" placeholder="Name your goal"><br><br>by <input type="text" name="goalMonth" placeholder="Month"> <input type="text" name="goalName" placeholder="Year">
+          </form>
+          <div class="btnContainer">
+            <a class="btn-primary" id="nextButton1" href="#">Next &rsaquo;</a>
+          </div>
+        </div>
+
+        <div class='setup2' class="hidden">
+          <h4>GOAL: I want to save up $500 for a trip to New York by July 2016.</h4>
+          <hr>
+          <h3>Step 2: Tell us about your spending habits.</h3>
+          <form>
+            <p>I usually spend $<input type='text' name='spendingAmount' placeholder='Enter an amount'> per week.</p>
+          </form>
+          <div class="btnContainer">
+            <a class="btn-primary" id='backButton2' href='#'>Back &lsaquo;</a>
+            <a class="btn-primary" id='nextButton2' href='#'>Next &rsaquo;</a>
+          </div>
+        </div>
+
+        <div class='setup3' class="hidden">
+          <h4>GOAL: I want to save up $500 for a trip to New York by July 2016.</h4>
+          <hr>
+          <h4>SPENDING HABITS: I usually spend $50 per week.</h4>
+          <hr>
+          <h3>Step 3: Choose a weekly or monthly budget.</h3>
+          <p>To reach your goal, you need to save $100 each month, or $25 each week.</p>
+          <form>
+            <input type='radio' name='budgetOption' value='weekly'>From now on, I will plan to spend only $100 per month.<br>
+            <input type='radio' name='budgetOption' value='weekly'>From now on, I will plan to spend only $25 per week.<br>
+          </form>
+          <div class="btnContainer">
+            <a class="btn-primary" id='backButton2' href='#'>Back &lsaquo;</a>
+            <a class="btn-primary" id='nextButton2' href='#'>Next &rsaquo;</a>
+          </div>
+        </div>
+      </div>
+
+
+      <footer class="footer">
+        <div class="container-fluid">
+          <a href="footer.html">About</a>
+          <a href="footer.html">Help</a>
+          <a href="footer.html">FAQ</a>
+          <a href="footer.html">Contact</a>
+        </div>
+      </footer>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="../bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+      <script src="../js/setup.js"></script>
+    </body>
+    </html>
