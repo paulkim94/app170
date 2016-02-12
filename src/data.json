@@ -1,0 +1,12 @@
+{
+	"storeItems": [
+		{
+			"ItemName": "Blue Shades", 
+			"ItemPrice": 123
+		}, 
+		{
+			"ItemName": "Black Shades", 
+			"ItemPrice": 125
+		}
+	]
+}

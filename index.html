@@ -8,10 +8,12 @@
 		<title>Bootstrap Piggy Homescreen</title>
 
 		<!-- Bootstrap -->
+		<link href="bootstrap-3.3.6-dist/css/bootstrap.css" rel="stylesheet">
 		<link href="bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/indexCSS.css" rel="stylesheet">
 		<link href="css/circle.css" rel="stylesheet">
 		<link href="css/home.css" rel="stylesheet">
+		<link href="css/common.css" rel="stylesheet">
 
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -50,19 +52,15 @@
 			</div><!-- /.container-fluid -->
 		</nav>
 
-
-		
-
-
         <div class="container-fluid">
         	<div class="row">
         		<div class="indicatorContainer">
 					<div class="c100 p75 huge green">
 						<span>$25</span>
 						<div class="slice">
-				  		<div class="bar"></div>
-				  		<div class="fill"></div>
-					</div>
+					  		<div class="bar"></div>
+					  		<div class="fill"></div>
+						</div>
 					</div>
 				</div>
 
@@ -70,67 +68,82 @@
 			    	<a class="addSpendingBtn" href="#">+ Add Spending</a>
 			    </div> !-->
 
-					<div class="btnContainer">
+				<div class="btnContainer">
   				<!-- Trigger the modal with a button -->
   			  <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal">+ Add Spending</button>
 					<!-- Modal Content for add spending button!-->
-
+​
 					<!-- Modal -->
 				  <div class="modal fade" id="myModal" role="dialog">
 				    <div class="modal-dialog">
-
+​
 				      <!-- Modal content-->
 				      <div class="modal-content">
 				        <div class="modal-header">
 				          <button type="button" class="close" data-dismiss="modal">&times;</button>
-				          <h4 class="modal-title">Include your spending</h4>
+				          <h4 class="modal-title">Update your spending</h4>
 				        </div>
+​
 				        <div class="modal-body">
-				          <p>This is where the numbers will go.</p>
+​
+								<!-- This is where modal form begins !-->
+									<form class="form-horizontal" role="form">
+								<div class="form-group">
+									<label  class="col-sm-2 control-label"
+														for="input">Expense name</label>
+									<div class="col-sm-10">
+											<input type="text" class="form-control"
+											id="transactionName" placeholder="Pizza"/>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label"
+												for="inputAmount" >Amount spent</label>
+									<div class="col-sm-10">
+											<input type="text" class="form-control"
+													id="inputAmount" placeholder="$1000"/>
+									</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label"
+											for="inputAmount" >Date</label>
+								<div class="col-sm-10">
+										<input type="date" class="form-control"
+												id="inputAmount" placeholder="1/1/2016"/>
+								</div>
+						</div>
+​
+							<div id="embeddingDatePicker"></div>
+							<input type="hidden" id="selectedDate" name="selectedDate" />
+​
+							<!--Dropdown menu!-->
+							<div class="dropdown">
+							  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Expense Category
+							  <span class="caret"></span></button>
+							  <div class="dropdown-menu">
+							  <li><a href="#">Rent</a></li>
+							  <li><a href="#">Utilties</a></li>
+							  <li><a href="#">Grocery</a></li>
+								<li><a href="#">Food</a></li>
+								<li><a href="#">Entertainment</a></li>
+  							</ul>
+						</div>
+					</div>
+​
+							</form>
+							<!-- This is where the modal form ends !-->
+​
 				        </div>
 				        <div class="modal-footer">
 				          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									<button type="button" class="btn btn-success" data-dismiss="modal">Confirm</button>
 				        </div>
 				      </div>
-
+​
 				    </div>
 				  </div>
-
+​
 				</div>
-
-
-
-				<div class="btnContainer2">
-				<!-- Trigger the modal with a button -->
-				<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">+ Add Earnings</button>
-				<!-- Modal Content for add spending button!-->
-
-				<!-- Modal -->
-				<div class="modal fade" id="myModal" role="dialog">
-					<div class="modal-dialog">
-
-						<!-- Modal content-->
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal">&times;</button>
-								<h4 class="modal-title">Include your earnings</h4>
-							</div>
-							<div class="modal-body">
-								<p>This is where the numbers will go.</p>
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-							</div>
-						</div>
-
-					</div>
-				</div>
-			</div>
-
-
-
-
-
 
         	</div>
         	<hr>
@@ -169,6 +182,15 @@
 				</h3>
         	</div>
 		</div>
+
+		<footer class="footer">
+			<div class="container-fluid">
+				<a href="footer.html">About</a>
+			    <a href="footer.html">Help</a>
+			    <a href="footer.html">FAQ</a>
+			    <a href="footer.html">Contact</a>
+			</div>
+		</footer>
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
