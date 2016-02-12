@@ -24,57 +24,165 @@
 	</head>
 	<body>
 
-		<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-    Log in
-</button>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">PIGGY</a>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li><a href="index.html">Dashboard</a></li>
+						<li><a href="../app170/src/expense.html">Transactions</a></li>
+						<li><a href="../app170/src/analytics.html">Analytics</a></li>
+					</ul>
+					<!-- code for the right side of the navbar -->
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="src/settings.html">Settings</a></li>
+						<li><a href="src/loginPage.html">Logout</a></li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-				<h4 class="modal-title" id="myModalLabel">Log in</h4>
-			</div> <!-- /.modal-header -->
-
-			<div class="modal-body">
-				<form role="form">
-					<div class="form-group">
-						<div class="input-group">
-							<input type="text" class="form-control" id="uLogin" placeholder="Login">
-							<label for="uLogin" class="input-group-addon glyphicon glyphicon-user"></label>
+        <div class="container-fluid">
+        	<div class="row">
+        		<div class="indicatorContainer">
+					<div class="c100 p75 huge green">
+						<span>$25</span>
+						<div class="slice">
+					  		<div class="bar"></div>
+					  		<div class="fill"></div>
 						</div>
-					</div> <!-- /.form-group -->
-
-					<div class="form-group">
-						<div class="input-group">
-							<input type="password" class="form-control" id="uPassword" placeholder="Password">
-							<label for="uPassword" class="input-group-addon glyphicon glyphicon-lock"></label>
-						</div> <!-- /.input-group -->
-					</div> <!-- /.form-group -->
-
-					<div class="checkbox">
-						<label>
-							<input type="checkbox"> Remember me
-						</label>
-					</div> <!-- /.checkbox -->
-				</form>
-
-			</div> <!-- /.modal-body -->
-
-			<div class="modal-footer">
-				<button class="form-control btn btn-primary">Ok</button>
-
-				<div class="progress">
-					<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="100" style="width: 0%;">
-						<span class="sr-only">progress</span>
 					</div>
 				</div>
-			</div> <!-- /.modal-footer -->
 
-		</div><!-- /.modal-content -->
-	</div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+				<!-- <div class="btnContainer">
+			    	<a class="addSpendingBtn" href="#">+ Add Spending</a>
+			    </div> !-->
+
+				<div class="btnContainer">
+  				<!-- Trigger the modal with a button -->
+  			  <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal">+ Add Spending</button>
+					<!-- Modal Content for add spending button!-->
+​
+					<!-- Modal -->
+				  <div class="modal fade" id="myModal" role="dialog">
+				    <div class="modal-dialog">
+​
+				      <!-- Modal content-->
+				      <div class="modal-content">
+				        <div class="modal-header">
+				          <button type="button" class="close" data-dismiss="modal">&times;</button>
+				          <h4 class="modal-title">Update your spending</h4>
+				        </div>
+​
+				        <div class="modal-body">
+​
+								<!-- This is where modal form begins !-->
+									<form class="form-horizontal" role="form">
+								<div class="form-group">
+									<label  class="col-sm-2 control-label"
+														for="input">Expense name</label>
+									<div class="col-sm-10">
+											<input type="text" class="form-control"
+											id="transactionName" placeholder="Pizza"/>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label"
+												for="inputAmount" >Amount spent</label>
+									<div class="col-sm-10">
+											<input type="text" class="form-control"
+													id="inputAmount" placeholder="$1000"/>
+									</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label"
+											for="inputAmount" >Date</label>
+								<div class="col-sm-10">
+										<input type="date" class="form-control"
+												id="inputAmount" placeholder="1/1/2016"/>
+								</div>
+						</div>
+​
+							<div id="embeddingDatePicker"></div>
+							<input type="hidden" id="selectedDate" name="selectedDate" />
+​
+							<!--Dropdown menu!-->
+							<div class="dropdown">
+							  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Expense Category
+							  <span class="caret"></span></button>
+							  <div class="dropdown-menu">
+							  <li><a href="#">Rent</a></li>
+							  <li><a href="#">Utilties</a></li>
+							  <li><a href="#">Grocery</a></li>
+								<li><a href="#">Food</a></li>
+								<li><a href="#">Entertainment</a></li>
+  							</ul>
+						</div>
+					</div>
+​
+							</form>
+							<!-- This is where the modal form ends !-->
+​
+				        </div>
+				        <div class="modal-footer">
+				          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									<button type="button" class="btn btn-success" data-dismiss="modal">Confirm</button>
+				        </div>
+				      </div>
+​
+				    </div>
+				  </div>
+​
+				</div>
+
+        	</div>
+        	<hr>
+        	<div class="row">
+        		<h2 style="text-align: center;">Piggy Jr.</h2>
+				<div id ="avatar-image">
+					<img src="images/piggy-avatar.png" alt="Pig Avatar" height="40%" width="40%" style="display: block; margin: auto;">
+					<p style="text-align: center;">Total Coins: 0</p>
+				</div>
+				<br>
+				<div class="buttons">
+					<a class="btn-piggy" href="src/closet.html">Closet</a>
+					<a class="btn-piggy" href="src/shop.html">Shop</a>
+				</div>
+        	</div>
+        	<hr>
+        	<div class="row">
+        		<h2 style="text-align: center;">Saving Goal(s)</h2>
+				<h3 style="text-align: center"> 3 months until...</h3>
+				<h3 style="text-align: center"> Vacation to NY</h3>
+
+				<div style="font-size: 16px; text-align: center">
+					<a href="#">Edit goal</a> |
+					<a href="#">Delete goal</a>
+				</div>
+
+				<div class="progress" style="width: 50%; margin: 0 auto">
+					<div class="progress-bar" role="progressbar" aria-valuenow="600"
+					aria-valuemin="0" aria-valuemax="1000" style="width: 60%">
+					$600 / $1000 saved
+					</div>
+				</div>
+
+				<h3 style="text-align: center">
+					+ <a href="#">Add another savings goal </a>
+				</h3>
+        	</div>
+		</div>
+
 		<footer class="footer">
 			<div class="container-fluid">
 				<a href="footer.html">About</a>

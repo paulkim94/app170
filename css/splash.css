@@ -26,10 +26,10 @@ header {
   font-family: 'Raleway', sans-serif;
   font-size: 20px;
 }
-
+/*
 .nav, .nav-right {
   font-family: 'Raleway', sans-serif;
-  list-style-type: none; 
+  list-style-type: none;
   margin: 0;
   padding: 0;
 }
@@ -92,4 +92,4 @@ header {
 .nav-right > li:hover > a, .nav-right > a:hover {
   background-color: #F55856;
   color: #fff;
-}
+} */
