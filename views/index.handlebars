@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<title>Bootstrap Piggy Homescreen</title>
+
+		<!-- Bootstrap -->
+		<link href="/bootstrap-3.3.6-dist/css/bootstrap.css" rel="stylesheet">
+		<link href="/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/css/indexCSS.css" rel="stylesheet">
+		<link href="/css/circle.css" rel="stylesheet">
+		<link href="/css/home.css" rel="stylesheet">
+		<link href="/css/common.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">PIGGY</a>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li><a href="/dashboard">Dashboard</a></li>
+						<li><a href="/transaction">Transactions</a></li>
+						<li><a href="/analytics">Analytics</a></li>
+					</ul>
+					<!-- code for the right side of the navbar -->
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="/setting">Settings</a></li>
+						<li><a href="/splash">Logout</a></li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+
+        <div class="container-fluid">
+        	<div class="row">
+        		<div class="indicatorContainer">
+					<div class="c100 p75 huge green">
+						<span>$25</span>
+						<div class="slice">
+					  		<div class="bar"></div>
+					  		<div class="fill"></div>
+						</div>
+					</div>
+				</div>
+
+				<!-- <div class="btnContainer">
+			    	<a class="addSpendingBtn" href="#">+ Add Spending</a>
+			    </div> !-->
+
+				<div class="btnContainer">
+  				<!-- Trigger the modal with a button -->
+  			  <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal">+ Add Spending</button>
+					<!-- Modal Content for add spending button!-->
+​
+					<!-- Modal -->
+				  <div class="modal fade" id="myModal" role="dialog">
+				    <div class="modal-dialog">
+​
+				      <!-- Modal content-->
+				      <div class="modal-content">
+				        <div class="modal-header">
+				          <button type="button" class="close" data-dismiss="modal">&times;</button>
+				          <h4 class="modal-title">Update your spending</h4>
+				        </div>
+​
+				        <div class="modal-body">
+​
+								<!-- This is where modal form begins !-->
+									<form class="form-horizontal" role="form">
+										<div class="form-group">
+											<label  class="col-sm-2 control-label"
+											for="input">Expense name</label>
+											<div class="col-sm-10">
+												<input type="text" class="form-control"
+												id="transactionName" placeholder="Pizza"/>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-2 control-label"
+											for="inputAmount" >Amount spent</label>
+											<div class="col-sm-10">
+												<input type="text" class="form-control"
+												id="inputAmount" placeholder="$1000"/>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-2 control-label"
+											for="inputAmount" >Date</label>
+											<div class="col-sm-10">
+												<input type="date" class="form-control"
+												id="inputAmount" placeholder="1/1/2016"/>
+											</div>
+										</div>
+										​
+										<div id="embeddingDatePicker"></div>
+										<input type="hidden" id="selectedDate" name="selectedDate" />
+										​
+										<!--Dropdown menu!-->
+										<div class="dropdown">
+											<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Expense Category
+											<span class="caret"></span></button>
+											<div class="dropdown-menu">
+												<ul>
+													<li><a href="#">Rent</a></li>
+													<li><a href="#">Utilties</a></li>
+													<li><a href="#">Grocery</a></li>
+													<li><a href="#">Food</a></li>
+													<li><a href="#">Entertainment</a></li>
+												</ul>
+											</div>
+										</div>
+								</form>
+								<!-- This is where the modal form ends !-->
+​
+				        </div>
+				        <div class="modal-footer">
+				          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									<button type="button" class="btn btn-success" data-dismiss="modal">Confirm</button>
+				        </div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+
+        	</div>
+        	<hr>
+        	<div class="row">
+        		<h2 style="text-align: center;">Piggy Jr.</h2>
+				<div id ="avatar-image">
+					<img src="images/piggy-avatar.png" alt="Pig Avatar" height="40%" width="40%" style="display: block; margin: auto;">
+					<p style="text-align: center;">Total Coins: 0</p>
+				</div>
+				<br>
+				<div class="buttons">
+					<a class="btn-piggy" href="/closet">Closet</a>
+					<a class="btn-piggy" href="/shop">Shop</a>
+				</div>
+        	</div>
+        	<hr>
+        	<div class="row">
+        		<h2 style="text-align: center;">Saving Goal(s)</h2>
+				<h3 style="text-align: center"> 3 months until...</h3>
+				<h3 style="text-align: center"> Vacation to NY</h3>
+
+				<div style="font-size: 16px; text-align: center">
+					<a href="#">Edit goal</a> |
+					<a href="#">Delete goal</a>
+				</div>
+
+				<div class="progress" style="width: 50%; margin: 0 auto">
+					<div class="progress-bar" role="progressbar" aria-valuenow="600"
+					aria-valuemin="0" aria-valuemax="1000" style="width: 60%">
+					$600 / $1000 saved
+					</div>
+				</div>
+
+				<h3 style="text-align: center">
+					+ <a href="#">Add another savings goal </a>
+				</h3>
+        	</div>
+		</div>
+
+    <footer class="footer">
+      <div class="container-fluid">
+        <a href="/aboutHelp">About &amp; Help</a>
+      </div>
+    </footer>
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+	</body>
+</html>

@@ -1,0 +1,80 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#avatar-image {
+  width: 50%;
+}
+
+.shop-item {
+  border-width: thin;
+  border-style: solid;
+}
+
+.btn-primary {
+  background-color: #333;
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 1.3px;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 20px 30px;
+}
+
+.btnContainer {
+  padding: 20px 30px;
+  text-align: center;
+}
+
+/* CSS for transactions table */
+#table-design {
+  margin-top: 1%;
+  margin-bottom: 1%;
+  margin-right: auto;
+  margin-left: auto;
+  width: 60%;
+  border: 1px solid #B0B0B0;
+
+  /* Font related */
+  font-size: 18px;
+}
+
+#table-design tbody {
+  /* Kind of irrelevant unless your .css is alreadt doing something else */
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+#table-design thead {
+  text-align: left;
+}
+
+#table-design thead th {
+  background: -moz-linear-gradient(top, #F0F0F0 0, #DBDBDB 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #F0F0F0), color-stop(100%, #DBDBDB));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F0F0F0', endColorstr='#DBDBDB', GradientType=0);
+  border: 1px solid #B0B0B0;
+  color: #444;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 3px 10px;
+}
+
+#table-design td {
+  padding: 3px 10px;
+
+}
+
+table #editDeleteTransaction > a {
+  font-weight: bold;
+}
