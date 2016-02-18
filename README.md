@@ -1,4 +1,4 @@
-lab6
+CSE 170 Application
 ====
 
-Lab 6: AJAX
+Piggy

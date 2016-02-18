@@ -6,12 +6,43 @@ html, body {
 }
 
 #avatar-image {
-  width: 50%;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
-.shop-item {
+.info {
+  display: inline-block;
+}
+
+.item-wrapper {
   border-width: thin;
   border-style: solid;
+  border-radius: 20px;
+  display: inline-block;
+  text-align: center;
+  margin: 2%;
+  padding-bottom: 2%;
+  padding-top: 2%;
+}
+
+.shop {
+  text-align: center;
+}
+
+.item-section {
+  text-align: center;
+}
+
+.modal-body {
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
+.item-img {
+  display: none;
 }
 
 .btn-primary {
@@ -23,7 +54,7 @@ html, body {
   letter-spacing: 1.3px;
   text-decoration: none;
   text-transform: uppercase;
-  padding: 20px 30px;
+  padding: 10px 20px;
 }
 
 .btnContainer {
