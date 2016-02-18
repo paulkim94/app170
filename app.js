@@ -55,6 +55,9 @@ app.get('/closet', closet.view);
 app.get('/shop', shop.view);
 app.get('/login', login.view);
 app.get('/setup', setup.view);
+app.get('/addTransaction', transaction.addTransaction);
+
+app.get('/viewTransactions', transaction.viewTransactions);
 // Example route
 // app.get('/users', user.list);
 
