@@ -1,0 +1,13 @@
+{
+  "storeItems": [
+    {
+      "ItemName": "Blue Shades",
+      "ItemThumbnail": "../images/blue-shades-thumbnail.png",
+      "ItemImage": "../images/blue-shades.png",
+      "ItemPrice": 10,
+      "ItemID" : "item0",
+      "BuyID" : "buy0",
+      "ModalTarget": "#item0modal",
+      "ModalId": "item0modal"
+    }
+]}
