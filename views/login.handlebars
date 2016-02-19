@@ -24,6 +24,7 @@
 						<fieldset>
 							<h2>Please Sign In</h2>
 							<hr class="colorgraph">
+							<form id="loginForm" role="form" method="get" action="/login">
 							<div class="form-group">
 			                    <input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address">
 							</div>
@@ -38,15 +39,15 @@
 							<hr class="colorgraph">
 							<div class="row">
 								<div class="col-xs-6 col-sm-6 col-md-6">
-
-			          <a href = "/setup" class="btn btn-lg btn-success btn-block"> Sign In </a>
+			          <a href ="/setup" class="btn btn-lg btn-success btn-block"> Sign In </a>
 								</div>
 								<div class="col-xs-6 col-sm-6 col-md-6">
-									<a href="" class="btn btn-lg btn-primary btn-block">Register</a>
+								  <input type="submit" input id= "submitBtn" value ="Register" class="btn btn-lg btn-primary btn-block"</a>
 								</div>
 							</div>
 						</fieldset>
 					</form>
+				</form>
 				</div>
 			</div>
 		</div>

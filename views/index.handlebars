@@ -176,10 +176,62 @@
 				</div>
 
 				<h3 style="text-align: center">
-					+ <a href="#">Add another savings goal </a>
+					+ <a href="#" data-toggle = "modal" data-target ="#basicModal">Add another savings goal </a>
 				</h3>
         	</div>
 		</div>
+
+ <!-- Modal for add another savings goal!-->
+		<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+            <h4 style = "text-align: center" class="modal-title" id="myModalLabel">Add another savings goal</h4>
+            </div>
+            <div class="modal-body">
+
+								<!--the actual form within the modal body!-->
+								<form class="form-horizontal" role="form">
+									<div class="form-group">
+										<label  class="col-sm-2 control-label"
+										for="input">Expense name</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control"
+											id="transactionName" placeholder="Pizza"/>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-2 control-label"
+										for="inputAmount" >Amount spent</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control"
+											id="inputAmount" placeholder="$1000"/>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-2 control-label"
+										for="inputAmount" >Date</label>
+										<div class="col-sm-10">
+											<input type="date" class="form-control"
+											id="inputAmount" placeholder="1/1/2016"/>
+										</div>
+									</div>
+									<form>
+									​
+									<div id="embeddingDatePicker"></div>
+									<input type="hidden" id="selectedDate" name="selectedDate" />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
 
     <footer class="footer">
       <div class="container-fluid">
