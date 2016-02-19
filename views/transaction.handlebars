@@ -80,14 +80,14 @@
         </thead>
         <tbody>
 					{{#each transactions}}
-						<tr id="transactionID">
+						<tr>
 	            <td>{{date}}</td>
 	            <td>{{nameTransaction}}</td>
 	            <td>{{category}}</td>
 	            <td>{{amount}}</td>
 	            <td id="editDeleteTransaction">
 	              <a href="#">Edit</a>
-	              <a href="/deleteTransactions">Delete</a>
+	              <a class="deleteLink" id="{{transactionID}}" href="/deleteTransactions">Delete</a>
 	            </td>
 	          </tr>
 					{{/each}}
@@ -156,14 +156,19 @@
 				</div>
       </div>
 
-			<div
-
-    </div>
+		</div>
 
     <!--<footer class="footer">
       <div class="container-fluid">
         <a href="footer.html">About &amp; Help</a>
       </div>
     </footer>-->
+		<script>
+			$('a.deleteLink').click(function() {
+				var clickedID = $(this).attr('id');
+				//alert(clickedID);
+				localStorage.setItem("clickedId", clickedID);
+			});
+		</script>
   </body>
 </html>

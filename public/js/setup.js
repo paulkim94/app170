@@ -102,8 +102,8 @@ function initializePage() {
 		var budgetDescription = "CURRENT MONTH BUDGET: My budget after paying for necessities is $" +
 														monthlyBudget + ".";
 
-		if( dd === goalDateDay ) {
-			/* EXACTLY month(s) later */
+		/*if( dd === goalDateDay ) {
+
 			var diffMonths = goalDateMonth - mm;
 
 			var savingsDescription = "To reach your goal, you need to save $" +
@@ -113,7 +113,7 @@ function initializePage() {
 																 (monthlyBudget - (goalAmount / diffMonths).toFixed(2)) +
 																 " per month until " + goalDate;
 		}
-		else {
+		else {*/
 			var oneDay = 24 * 60 * 60 * 1000;
 			var diffDays = Math.round(Math.abs((dateGoal.getTime() - today.getTime())/(oneDay)));
 
@@ -131,7 +131,7 @@ function initializePage() {
 			//localStorage.setItem("weeklyIndicatorAmnt", (((monthlyBudget / 28) - (goalAmount / diffDays)).toFixed(2) * 7).toFixed(2) )
 			localStorage.setItem("dailyIndicatorAmnt", ((monthlyBudget / daysRemaining) - (goalAmount / diffDays)).toFixed(2) );
 
-		}
+		//}
 
 		//var savingsDescription = "To reach your goal, you need to save $";
 
