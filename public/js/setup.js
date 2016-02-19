@@ -46,6 +46,9 @@ function initializePage() {
 			return;
 		}
 
+		localStorage.setItem("goalTitle", goalName);
+		localStorage.setItem("goalAmnt", goalAmount);
+
 		$(".setup1").addClass("hidden");
 		$(".setup2").removeClass("hidden");
 
@@ -114,6 +117,7 @@ function initializePage() {
 			var oneDay = 24 * 60 * 60 * 1000;
 			var diffDays = Math.round(Math.abs((dateGoal.getTime() - today.getTime())/(oneDay)));
 
+			localStorage.setItem("daysLeft", diffDays);
 			console.log(diffDays);
 
 			var savingsDescription = "To reach your goal, you need to save $" +
