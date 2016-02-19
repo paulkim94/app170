@@ -70,7 +70,7 @@
         <p class="item-code">{{ItemCode}}</p>
         <img src="{{ItemThumbnail}}" alt="Closet Item Image" height="auto" width="100px" style="margin:auto">
         <img class="item-img" src="{{ItemImage}}" alt="Closet Item Image" height="auto" width="100px" style="margin:auto">
-        <div class="btnContainer" id="btn-items">
+        <div class="btnContainer">
           <a class="btn-primary try-button" id="{{ItemID}}" data-toggle="modal" data-target="{{ModalTarget}}">Try it</a>
           <a class="btn-primary wear-button" id="{{BuyID}}">Wear it</a>
       </div>
@@ -125,8 +125,6 @@ $(document).ready(function () {
   $('.wear-button').click(function () {
     var pig = document.getElementById("piggy-display");
     var wrapperItem = $(this).closest('.item-wrapper');
-    var btn = wrapperItem.find("#btn-items");
-    $(btn).html("<a class='btn-primary' id='btn-undress'>Take it off</a>");
     var code = wrapperItem.find('.item-code').html();
     var version = document.getElementById("piggyVersion");
     $(version).html(code);
