@@ -80,14 +80,14 @@
         </thead>
         <tbody>
 					{{#each transactions}}
-						<tr>
+						<tr id="transactionID">
 	            <td>{{date}}</td>
 	            <td>{{nameTransaction}}</td>
 	            <td>{{category}}</td>
 	            <td>{{amount}}</td>
 	            <td id="editDeleteTransaction">
 	              <a href="#">Edit</a>
-	              <a href="#">Delete</a>
+	              <a href="/deleteTransactions">Delete</a>
 	            </td>
 	          </tr>
 					{{/each}}
@@ -139,7 +139,6 @@
 													<option>Entertainment</option>
 													<option>Transportation</option>
 													<option>Personal Care </option>
-
 											</select>
 									</div>
 									<input type="submit" id="submitBtn" class="btn btn-default" value="Add Transaction" onclick="alert('New transaction has been added');"></input>
