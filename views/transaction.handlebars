@@ -74,7 +74,7 @@
           <th>Date</th>
           <th>Transaction</th>
           <th>Category</th>
-          <th>Amount Spent</th>
+          <th>Amount Spent ($)</th>
           <th></th>
         </thead>
         <tbody>
@@ -129,26 +129,21 @@
 											id="date" placeholder="Ex. 02/15/2016" name="date"/>
 										</div>
 									</div>
-									​<div class="form-group">
-									  <label for="category">Category</label>
+									<div class="form-group">
+										<label for "category"> Category </label>
 										<div class="col-sm-10">
-											<input type="text" class="form-control"
-											id="category" placeholder="Ex. Rent"/ name="category">
-										</div>
-										<!--<div class="col-sm-10">
-											<select class="form-control">
-											    <option>Rent</option>
-											    <option>Utilities</option>
-													<option>Groceries</option>
-													<option>Other</option>
+											<select class="form-control" id="category" name="category">
+											    <option>Meals/Drinks</option>
+											    <option>Necessities</option>
+													<option>Entertainment</option>
+
 											</select>
-										</div>-->
 									</div>
 									<input type="submit" id="submitBtn" class="btn btn-default" value="Add Transaction" onclick="alert('New transaction has been added');"></input>
 								</form>
 								<!-- This is where the modal form ends !-->
-
-				      </div>
+							</div>
+				    </div>
 				      <div class="modal-footer">
 				        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				      </div>

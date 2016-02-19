@@ -1,6 +1,7 @@
 /*
  * GET transaction page
  */
+
 var data = require("../transaction.json");
 
 exports.view = function(req, res){
