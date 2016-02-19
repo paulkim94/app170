@@ -62,11 +62,21 @@ function initializePage() {
 
 		$("#goalDescription3").html(goalDescription);
 
+		/* Returns number of days in any month */
+		var getDaysInMonth = function(month, year) {
+			return new Date(year, month, 0).getDate();
+		}
+
 		/* Actual date */
 		var today = new Date();
 		var dd = today.getDate();
 		var mm = today.getMonth() + 1;
 		var yyyy = today.getFullYear();
+
+		/* Number of days remaining this month */
+		var daysRemaining = getDaysInMonth(mm, yyyy) - dd;
+
+		console.log(daysRemaining);
 
 		/* The date to save up by */
 		var dateGoal = new Date(goalDate);
@@ -82,10 +92,11 @@ function initializePage() {
 		// The monthly available budget
 		var monthlyBudget = monthlySpending - necessitySpendings - otherSpending;
 
-		spendingDescription = "SPENDING HABITS: I usually spend $" +
-													monthlySpending + " per month.";
+		//spendingDescription = "SPENDING HABITS: I usually spend $" +
+		//											monthlySpending + " per month.";
+		spendingDescription = "MONTHLY INCOME: $" + monthlySpending + " per month";
 
-		var budgetDescription = "THIS MONTH'S BUDGET: My current spending budget after paying for necessities is $" +
+		var budgetDescription = "CURRENT MONTH BUDGET: My budget after paying for necessities is $" +
 														monthlyBudget + ".";
 
 		if( dd === goalDateDay ) {
@@ -103,13 +114,18 @@ function initializePage() {
 			var oneDay = 24 * 60 * 60 * 1000;
 			var diffDays = Math.round(Math.abs((dateGoal.getTime() - today.getTime())/(oneDay)));
 
+			console.log(diffDays);
+
 			var savingsDescription = "To reach your goal, you need to save $" +
 															 (goalAmount / diffDays).toFixed(2) +
 															 " per day for the next " + diffDays + " days.";
 
 			var newBudgetDescription = "Your new spending budget is $" +
-			(((monthlyBudget / 28) - (goalAmount / diffDays)).toFixed(2) * 7).toFixed(2) +
-			" per week for the next 4 weeks";
+			((monthlyBudget / daysRemaining) - (goalAmount / diffDays)).toFixed(2) +
+			" per day for the remaining month";
+
+			//localStorage.setItem("weeklyIndicatorAmnt", (((monthlyBudget / 28) - (goalAmount / diffDays)).toFixed(2) * 7).toFixed(2) )
+			localStorage.setItem("dailyIndicatorAmnt", ((monthlyBudget / daysRemaining) - (goalAmount / diffDays)).toFixed(2) );
 
 		}
 
