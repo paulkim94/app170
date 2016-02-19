@@ -1,8 +1,16 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto';
+}
+
 .indicatorContainer {
   width: 320px;
   height: 320px;
   padding-top: 20px;
-  margin: 0 auto;               
+  margin: 0 auto;
 }
 
 .addSpendingBtn {
@@ -17,10 +25,20 @@
   padding: 20px 30px;
 }
 
+.btn-primary {
+  background-color: #333;
+  color: #fff;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 1.3px;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 15px 25px;
+}
+
 .btnContainer {
-	margin-top: 50px;
-	padding: 20px 30px;
-	text-align: center;
+  padding: 15px 25px;
+  text-align: center;
 }
 
 #avatar-image {
@@ -53,7 +71,7 @@
 }
 
 .buttons {
-	text-align: center; 
+	text-align: center;
 }
 
 .footer > .container-fluid {

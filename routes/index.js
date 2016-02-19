@@ -36,7 +36,7 @@ exports.view = function(req, res){
 		{ 	'name': 'User Test Results and Online Test Proposal',
 			'image': 'lorempixel.city.2.jpeg',
 			'id': 'project8'
-		}    	
+		}
 	]
   });
 };
