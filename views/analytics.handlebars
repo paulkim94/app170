@@ -14,14 +14,16 @@
 			function drawChart() {
 			var data = google.visualization.arrayToDataTable([
 			  ['Expense Category', 'Dollars Spent'],
-			  ['Necessities',     600],
-			  ['Leisure',      78],
-			  ['Clothes',  120],
-			  ['Food', 130],
+				['Necessities', 100],
+			  ['Clothes',  200],
+				['Meals/Drinks', 100],
+				['Personal Care', 100],
+				['Entertainment', 125],
+				['Transportation', 125],
 			]);
 
 			var options = {
-			  pieHole: 0.25,
+			  pieHole: 0.5,
 			  fontSize: 8
 			};
 
