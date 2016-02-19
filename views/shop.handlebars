@@ -61,9 +61,11 @@
 </div>
 
 <div class="item-section">
+      <!-- item template -->
   {{#storeItems}}
   <div class="item-wrapper">
     <div class="container-fluid shop-item">
+      <div class="item-box">
       <h4 class="item-name">{{ItemName}}</h4>
       <img src="{{ItemThumbnail}}" alt="Closet Item Image" height="auto" width="100px" style="margin:auto">
       <img class="item-img" src="{{ItemImage}}" alt="Closet Item Image" height="auto" width="100px" style="margin:auto">
@@ -73,6 +75,7 @@
         <a class="btn-primary buy-button" id="{{BuyID}}">Buy it</a>
       </div>
     </div>
+  </div>
 
     <!-- Modal -->
     <div class="modal fade" id="{{ModalId}}" role="dialog">
@@ -84,14 +87,13 @@
             <h4 class="modal-title">Piggy Jr. looks great in {{ItemName}}!</h4>
           </div>
           <div class="modal-body">
-            <canvas class="myCanvas" width="350" height="350"
-            style="border:1px solid #d3d3d3;">
+            <canvas class="itemCanvas" width="350" height="350" style="border:1px solid #d3d3d3;">
           </canvas>
         </div>
-        <div class="modal-footer btnContainer">
+        <!-- <div class="modal-footer btnContainer">
           <a class="btn-primary" data-toggle="modal" data-dismiss="modal">No, thanks</a>
           <a class="btn-primary buy-button" data-toggle="modal" data-dismiss="modal">Buy it</a>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -99,21 +101,6 @@
 </div>
 {{/storeItems}}
 </div>
-
-<!--</script>-->
-
-<!--<script>
-function myCanvas() {
-var c = document.getElementById("myCanvas");
-var ctx = c.getContext("2d");
-var img = document.getElementById("avatar-image");
-ctx.drawImage(img,25,25,300,300);
-var img = document.getElementById("itemImg");
-ctx.globalCompositeOperation="source-over";
-ctx.drawImage(img,25,25,300,300);
-}-->
-
-
 </script>
 
 <footer class="footer">
@@ -122,19 +109,6 @@ ctx.drawImage(img,25,25,300,300);
   </div>
 </footer>
 
-<!--4. Handlebars.js slingshot -->
-<!--<script>
-//4a.function creation
-var slingshot = function (url, tplId, anchor) {
-$.getJSON(url, function(data) {
-var template = $(tplId).html();
-var stone = Handlebars.compile(template)(data);
-$(anchor).append(stone);
-});
-}
-//4b.function firing
-slingshot('data.json', '#tpl', '#anchor'); // since url = 'data.json' , we can use both notations.
-</script>-->
 
 <script>
 $(document).ready(function () {
@@ -157,9 +131,10 @@ $(document).ready(function () {
   $('.buy-button').click(function () {
     var wrapper = $(this).closest('.item-wrapper');
     //wrapper.addClass("hide");
+    $('.modal-fade').remove();
     var name = wrapper.find('.item-name').html();
-    wrapper.html("<div class='container-fluid shop-item'><h3>" + name + " purchased! Find it in your closet.</h3></div>");
-
+    wrapper.html("<h3>" + name + " purchased! Find it in your closet.</h3></div>");
+    wrapper.fadeOut(5000);
   });
 });
 </script>
