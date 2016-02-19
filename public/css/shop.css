@@ -50,6 +50,14 @@ html, body {
   display: none;
 }
 
+#piggyVersion {
+  display: none;
+}
+
+.item-code {
+  display: none;
+}
+
 .btn-primary {
   background-color: #333;
   color: #fff;
