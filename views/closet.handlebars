@@ -48,10 +48,13 @@
   <div class="shop">
     <h1>Closet</h1>
     <h3>Piggy Jr.</h3>
-    <img id ="avatar-image" src="../images/piggy-avatar.png" alt="Pig Avatar" width= "50%">
+    <p id="piggyVersion">A</p>
+    <div id="piggy-display">
+      <img id ="avatar-image" src="../images/piggy-avatar.png" alt="Pig Avatar" width= "50%">
+    </div>
     <div class="info-bar">
-      <div class="info"><h4>Total Coins: 0</h4></div>
       <div class="btnContainer info">
+        <a class="btn-primary" id="btn-undress">Get Nakey</a>
         <a class="btn-primary" href="/shop">Shop</a>
       </div>
     </div>
@@ -59,20 +62,19 @@
 </div>
 
 <div class="item-section">
-      <!-- item template -->
+  <!-- item template -->
   {{#closetItems}}
   <div class="item-wrapper">
     <div class="container-fluid shop-item">
-      <div class="item-box">
-      <h4 class="item-name">{{ItemName}}</h4>
-      <img src="{{ItemThumbnail}}" alt="Closet Item Image" height="auto" width="100px" style="margin:auto">
-      <img class="item-img" src="{{ItemImage}}" alt="Closet Item Image" height="auto" width="100px" style="margin:auto">
-      <div class="btnContainer">
-        <a class="btn-primary try-button" id="{{ItemID}}" data-toggle="modal" data-target="{{ModalTarget}}">Try it</a>
-        <a class="btn-primary buy-button" id="{{BuyID}}">Wear it</a>
+        <h4 class="item-name">{{ItemName}}</h4>
+        <p class="item-code">{{ItemCode}}</p>
+        <img src="{{ItemThumbnail}}" alt="Closet Item Image" height="auto" width="100px" style="margin:auto">
+        <img class="item-img" src="{{ItemImage}}" alt="Closet Item Image" height="auto" width="100px" style="margin:auto">
+        <div class="btnContainer" id="btn-items">
+          <a class="btn-primary try-button" id="{{ItemID}}" data-toggle="modal" data-target="{{ModalTarget}}">Try it</a>
+          <a class="btn-primary wear-button" id="{{BuyID}}">Wear it</a>
       </div>
     </div>
-  </div>
 
     <!-- Modal -->
     <div class="modal fade" id="{{ModalId}}" role="dialog">
@@ -85,12 +87,8 @@
           </div>
           <div class="modal-body">
             <canvas class="itemCanvas" width="350" height="350" style="border:1px solid #d3d3d3;">
-          </canvas>
-        </div>
-        <!-- <div class="modal-footer btnContainer">
-          <a class="btn-primary" data-toggle="modal" data-dismiss="modal">No, thanks</a>
-          <a class="btn-primary buy-button" data-toggle="modal" data-dismiss="modal">Buy it</a>
-        </div> -->
+            </canvas>
+          </div>
       </div>
     </div>
   </div>
@@ -114,7 +112,6 @@ $(document).ready(function () {
     var wrapper = $(this).closest('.item-wrapper');
     var c = wrapper.find('canvas')[0];
 
-    //   var c = document.getElementById("myCanvas");
     var ctx = c.getContext("2d");
     var img = document.getElementById("avatar-image");
     ctx.drawImage(img,25,25,300,300);
@@ -124,16 +121,34 @@ $(document).ready(function () {
     ctx.drawImage(img,25,25,300,300);
   });
 
-  //buy the clothes
-  $('.buy-button').click(function () {
-    var wrapper = $(this).closest('.item-wrapper');
-    //wrapper.addClass("hide");
-    $('.modal-fade').remove();
-    var name = wrapper.find('.item-name').html();
-    wrapper.html("<h3>" + name + " purchased! Find it in your closet.</h3></div>");
-    wrapper.fadeOut(5000);
+  //wear the clothes
+  $('.wear-button').click(function () {
+    var pig = document.getElementById("piggy-display");
+    var wrapperItem = $(this).closest('.item-wrapper');
+    var btn = wrapperItem.find("#btn-items");
+    $(btn).html("<a class='btn-primary' id='btn-undress'>Take it off</a>");
+    var code = wrapperItem.find('.item-code').html();
+    var version = document.getElementById("piggyVersion");
+    $(version).html(code);
+    if ($(version).text() == 'B') {
+      $(pig).html("<img id ='avatar-image' src='../images/piggy-avatar-1.png' alt='Pig Avatar' width= '50%'>");
+    } else if ($(version).text() == 'C') {
+      $(pig).html("<img id ='avatar-image' src='../images/piggy-avatar-2.png' alt='Pig Avatar' width= '50%'>");
+    }
+    else {
+      $(pig).html("<img id ='avatar-image' src='../images/piggy-avatar.png' alt='Pig Avatar' width= '50%'>");
+    }
   });
-});
-</script>
+
+  $('#btn-undress').click(function () {
+    var pig = document.getElementById("piggy-display");
+    var wrapperItem = $(this).closest('.item-wrapper');
+    var code = wrapperItem.find('.item-code').html();
+    var version = document.getElementById("piggyVersion");
+    $(version).html(code);
+    $(pig).html("<img id ='avatar-image' src='../images/piggy-avatar.png' alt='Pig Avatar' width= '50%'>");
+  });
+  });
+  </script>
 </body>
 </html>
