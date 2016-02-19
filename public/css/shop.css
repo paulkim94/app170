@@ -25,6 +25,11 @@ html, body {
   padding-top: 2%;
 }
 
+.itemCanvas {
+  width: 250px;
+  height: 250px;
+}
+
 .shop {
   text-align: center;
 }
