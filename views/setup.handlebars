@@ -39,21 +39,21 @@
   </head>
   <body>
     <div class="container-fluid" id="setup">
+      <!-- First section -->
       <div class="setup1">
         <h1>Welcome to Piggy!</h1>
-        <h4>Piggy is going to help you save money for the things that matter to you.</h4>
-        <h3>Step 1: List a savings goal.</h3>
+        <h4>Before you set a savings goal, we need information about your financial situation!</h4>
+        <hr>
+        <h3>Step 1: Tell us about your monthly financial situation.</h3>
         <form>
-          <p>How much do you need to save?</p>
-            <input type="number" id="goalAmount" name="goalAmount" placeholder="$ Enter an amount">
+          <p>What is your income per month?</p>
+            <input type="number" id="monthlyIncome" name="monthlyIncome" placeholder="$ Enter an amount">
             <br><br> <!-- add margins in css later and remove <br> -->
-          <p>For what?</p>
-            <input type="text" id="goalName" name="goalName" placeholder="Name your goal">
+          <p>How much goes towards necessities (rent, utilities, groceries, insurance, fees)?</p>
+            <input type="text" id="necessities" name="necessities" placeholder="$ Enter an amount">
             <br><br> <!-- add margins in css later and remove <br> -->
-          <p>By when?</p>
-            <input type="text" id="date" name="goalDate" placeholder="Date">
-
-          <!--<p>I want to save up $<input type="text" name="goalAmount" placeholder="Enter an amount"><br><br>for<input type="text" name="goalName" placeholder="Name your goal"><br><br>by <input type="text" name="goalMonth" placeholder="Month"> <input type="text" name="goalName" placeholder="Year">-->
+          <p>How much did you spend this month so far EXCLUDING necessities?</p>
+            <input type="text" id="spentSoFar" name="spentSoFar" placeholder="$ Enter an amount">
         </form>
         <div class="btnContainer">
           <a class="btn-primary" id="nextButton1" href="#">Next &rsaquo;</a>
@@ -61,21 +61,18 @@
       </div>
 
       <div class="setup2 hidden">
-        <h4 id="goalDescription"></h4>
+        <h4>Piggy is going to help you save money for the things that matter to you.</h4>
         <hr>
-        <h3>Step 2: Tell us about your spending habits.</h3>
+        <h3>Step 2: List a savings goal.</h3>
         <form>
-          <p>How much do you normally spend per month?</p>
-          <!--<p>How much do you spend per month on average?</p>-->
-          <input type="number" id="monthlySpending" name='spendingAmount' placeholder='$ Enter an amount'>
-
-          <br><br>
-          <p>How much of that goes towards necessities (rent, utilities, groceries, insurance, fees)?</p>
-          <input type="number" id="necessities" name="necessities" placeholder='$ Enter an amount'>
-
-          <br><br>
-          <p>How much did you spend this month so far excluding necessities?</p>
-          <input type="number" id="pastSpending" name="pastSpending" placeholder='$ Enter an amount'>
+          <p>How much do you need to save?</p>
+            <input type="number" id="goalAmount" name="goalAmount" placeholder="$ Enter an amount">
+            <br><br>
+          <p>For what?</p>
+            <input type="text" id="goalName" name="goalName" placeholder="Name your goal">
+            <br><br>
+          <p>By when?</p>
+            <input type="text" id="date" name="goalDate" placeholder="Date">
         </form>
         <div class="btnContainer">
           <a class="btn-primary" id='backButton2' href='#'>&lsaquo; Back</a>
@@ -84,51 +81,34 @@
       </div>
 
       <div class="setup3 hidden">
-        <h4 id="goalDescription3"></h4>
+        <h3>Review your saving goal &amp; financial information:</h3>
         <hr>
-        <h4 id="spendingHabits"></h4>
+        <h4 id="goalDescription"></h4>
+        <hr>
+        <h4 id="monthlyDescription"></h4>
         <hr>
         <h4 id="monthlyBudget"></h4>
         <hr>
-        <!--<h3>Step 3: Choose a weekly or monthly budget.</h3>-->
-        <!--<h4 id="savingsGuide"></h4>-->
 
         <h4>Sit back and we'll calculate a spending budget that ensures that
         you save the amount you specified by the deadline!</h4>
 
         <h4 id="newBudget" style="font-weight: bold"></h4>
-        <!--<p>To reach your goal, you need to save $100 each month, or $25 each week.</p>-->
-        <!--<form>
-          <input type='radio' name='budgetOption' value='weekly'>From now on, I will plan to spend only $100 per month.<br>
-          <input type='radio' name='budgetOption' value='weekly'>From now on, I will plan to spend only $25 per week.<br>
-        </form>-->
+
         <div class="btnContainer">
           <a class="btn-primary" id='backButton3' href='#'>&lsaquo; Back</a>
-          <!--<a class="btn-primary" id='nextButton3' href='#'>Next &rsaquo;</a>-->
           <a class="btn-primary" id='confirm' href='#'>Confirm &rsaquo;</a>
         </div>
       </div>
 
       <div class="setup4 hidden">
-        <h2>Review your saving goals:</h2>
-        <hr>
-        <h4>GOAL: I want to save up $500 for a trip to New York by July 2016.</h4>
-        <hr>
-        <h4>SPENDING HABITS: I usually spend $50 per week.</h4>
-        <hr>
-        <h4>BUDGET: From now on, I will plan to spend only $25 per week.</h4>
-        <div class="btnContainer">
-          <a class="btn-primary" id='backButton4' href='#'>Back &lsaquo;</a>
-          <a class="btn-primary" id='nextButton4' href='#'>Confirm &rsaquo;</a>
-        </div>
-      </div>
-
-      <div class="setup5 hidden">
         <h1>Congratulations!</h1>
-        <h2>You just finished setting your first saving goal.</h2>
-        <p>You can change this goal anytime, or add another goal.</p>
-        <p>If you can meet your saving goal every week, you will be rewarded Piggy Coins! Piggy Coins can be used to buy items to dress up your Piggy friend.</p>
+        <h2>You just finished setting your saving goal.</h2>
+        <hr>
+        <h4>You can edit information about your goal on the dashboard!</h4>
+        <h4>If you meet your saving goal every week, you will be rewarded Piggy Coins! Piggy Coins can be used to buy items to dress up your Piggy avatar.</h4>
         <br>
+        <hr>
         <h3>Let's meet your friend, Piggy!</h3>
         <div class="btnContainer">
           <a class="btn-primary" id='finishButton' href='/dashboard'>Finish</a>
@@ -136,13 +116,6 @@
       </div>
     </div>
 
-    <!-- Make sure footer sticks to bottom -->
-
-    <!--<footer class="footer">
-      <div class="container-fluid">
-        <a href="footer.html">About &amp; Help</a>
-      </div>
-    </footer>-->
     <script src="js/setup.js"></script>
   </body>
 </html>
