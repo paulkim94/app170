@@ -11,28 +11,46 @@ $(document).ready(function() {
 function initializePage() {
 
 	/* Sharable variables */
-	var goalDescription;
-	var spendingDescription;
+
+	// Inputs from Step 1.
+	var monthlyIncome;
+	var necessities;
+	var spentSoFar;
+
+	// Inputs from Step 2.
 	var goalDate;
+	var goalName;
 	var goalAmount;
+	var goalDescription;
 
 	/* When nextButton in Step 1 is clicked */
 	$("#nextButton1").click(function(e) {
 
-		/* Validate inputs later */
+		/* Input info from Step 1. */
+		monthlyIncome = $("#monthlyIncome").val();
+		necessities = $("#necessities").val();
+		spentSoFar = $("#spentSoFar").val();
+
+		console.log(monthlyIncome + necessities + spentSoFar);
+
+		$(".setup1").addClass("hidden");
+		$(".setup2").removeClass("hidden");
+ 	});
+
+	/* When next button in Step 2 is clicked */
+ 	$("#nextButton2").click(function(e) {
+ 		console.log("Next Clicked");
+
+		/* Input info from Step 2. */
 
 		goalAmount = $("#goalAmount").val();
-		var goalName = $("#goalName").val();
+		goalName = $("#goalName").val();
 		goalDate = $("#date").val();
-		var validationMsg;
 
-		/*console.log(goalAmount);
-		console.log(goalName);
-		console.log(goalDate);
-		console.log("Next Clicked");*/
+		//var validationMsg;
 
 		/* TODO Empty input validation*/
-		if(goalAmount == null || goalAmount == "") {
+		/*if(goalAmount == null || goalAmount == "") {
 			validationMsg = "- Please enter a goal amount";
 		}
 		if(goalName == null || goalName == "") {
@@ -44,27 +62,20 @@ function initializePage() {
 		if(validationMsg != null) {
 			alert(validationMsg);
 			return;
-		}
+		}*/
 
 		localStorage.setItem("goalTitle", goalName);
 		localStorage.setItem("goalAmnt", goalAmount);
 
-		$(".setup1").addClass("hidden");
-		$(".setup2").removeClass("hidden");
+		$(".setup2").addClass("hidden");
+		$(".setup3").removeClass("hidden");
+
+		/* To be added on summary portion of setup */
 
 		goalDescription = "GOAL: I want to save $" + goalAmount +
-	  " for a " + goalName + " by " + goalDate + ".";
+		" for a " + goalName + " by " + goalDate + ".";
 
 		$("#goalDescription").html(goalDescription);
-
- 	});
-
-	/* When next button in Step 2 is clicked */
- 	$("#nextButton2").click(function(e) {
- 		console.log("Next Clicked");
-
-		$("#goalDescription3").html(goalDescription);
-
 		/* Returns number of days in any month */
 		var getDaysInMonth = function(month, year) {
 			return new Date(year, month, 0).getDate();
@@ -87,55 +98,32 @@ function initializePage() {
 		var goalDateMonth = dateGoal.getMonth() + 1;
 		console.log(goalDateDay);
 
-		/* Gets input value from Step 2 page */
-		var monthlySpending = $("#monthlySpending").val();
-		var necessitySpendings = $("#necessities").val();
-		var otherSpending = $("#pastSpending").val();
-
 		// The monthly available budget
-		var monthlyBudget = monthlySpending - necessitySpendings - otherSpending;
+		var monthlyBudget = monthlyIncome - necessities - spentSoFar;
 
-		//spendingDescription = "SPENDING HABITS: I usually spend $" +
-		//											monthlySpending + " per month.";
-		spendingDescription = "MONTHLY INCOME: $" + monthlySpending + " per month";
+		var monthlyIncomeDescription = "MONTHLY INCOME: $" + monthlyIncome + " per month";
 
 		var budgetDescription = "CURRENT MONTH BUDGET: My budget after paying for necessities is $" +
 														monthlyBudget + ".";
 
-		/*if( dd === goalDateDay ) {
+		var oneDay = 24 * 60 * 60 * 1000;
+		var diffDays = Math.round(Math.abs((dateGoal.getTime() - today.getTime())/(oneDay)));
 
-			var diffMonths = goalDateMonth - mm;
+		localStorage.setItem("daysLeft", diffDays);
+		console.log(diffDays);
 
-			var savingsDescription = "To reach your goal, you need to save $" +
-															 (goalAmount / diffMonths).toFixed(2) + " per month.";
+		var savingsDescription = "To reach your goal, you need to save $" +
+														 (goalAmount / diffDays).toFixed(2) +
+														 " per day for the next " + diffDays + " days.";
 
-			var newBudgetDescription = "From now on, I plan to spend only $" +
-																 (monthlyBudget - (goalAmount / diffMonths).toFixed(2)) +
-																 " per month until " + goalDate;
-		}
-		else {*/
-			var oneDay = 24 * 60 * 60 * 1000;
-			var diffDays = Math.round(Math.abs((dateGoal.getTime() - today.getTime())/(oneDay)));
+		var newBudgetDescription = "Your new spending budget is $" +
+		((monthlyBudget / daysRemaining) - (goalAmount / diffDays)).toFixed(2) +
+		" per day for the remaining month";
 
-			localStorage.setItem("daysLeft", diffDays);
-			console.log(diffDays);
+		//localStorage.setItem("weeklyIndicatorAmnt", (((monthlyBudget / 28) - (goalAmount / diffDays)).toFixed(2) * 7).toFixed(2) )
+		localStorage.setItem("dailyIndicatorAmnt", ((monthlyBudget / daysRemaining) - (goalAmount / diffDays)).toFixed(2) );
 
-			var savingsDescription = "To reach your goal, you need to save $" +
-															 (goalAmount / diffDays).toFixed(2) +
-															 " per day for the next " + diffDays + " days.";
-
-			var newBudgetDescription = "Your new spending budget is $" +
-			((monthlyBudget / daysRemaining) - (goalAmount / diffDays)).toFixed(2) +
-			" per day for the remaining month";
-
-			//localStorage.setItem("weeklyIndicatorAmnt", (((monthlyBudget / 28) - (goalAmount / diffDays)).toFixed(2) * 7).toFixed(2) )
-			localStorage.setItem("dailyIndicatorAmnt", ((monthlyBudget / daysRemaining) - (goalAmount / diffDays)).toFixed(2) );
-
-		//}
-
-		//var savingsDescription = "To reach your goal, you need to save $";
-
-		$("#spendingHabits").html(spendingDescription);
+		$("#monthlyDescription").html(monthlyIncomeDescription);
 		$("#monthlyBudget").html(budgetDescription);
 
 		$("#savingsGuide").html(savingsDescription);
@@ -143,7 +131,6 @@ function initializePage() {
 
  		$(".setup2").addClass("hidden");
  		$(".setup3").removeClass("hidden");
-
 
  	});
 
@@ -155,7 +142,7 @@ function initializePage() {
 
 	$("#confirm").click(function(e) {
 		$(".setup3").addClass("hidden");
-		$(".setup5").removeClass("hidden");
+		$(".setup4").removeClass("hidden");
 	});
 
  	$("#nextButton").click(function(e) {
@@ -168,17 +155,5 @@ function initializePage() {
  		console.log("Back Clicked");
  		$(".setup3").addClass("hidden");
  		$(".setup2").removeClass("hidden");
- 	});
-
- 	$("#nextButton4").click(function(e) {
- 		console.log("Next Clicked");
- 		$(".setup4").addClass("hidden");
- 		$(".setup5").removeClass("hidden");
- 	});
-
- 	$("#backButton4").click(function(e) {
- 		console.log("Back Clicked");
- 		$(".setup4").addClass("hidden");
- 		$(".setup3").removeClass("hidden");
  	});
  }
