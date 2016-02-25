@@ -88,10 +88,10 @@
             <canvas class="itemCanvas" width="350" height="350" style="border:1px solid #d3d3d3;">
           </canvas>
         </div>
-        <!-- <div class="modal-footer btnContainer">
+        <div class="modal-footer btnContainer">
           <a class="btn-primary" data-toggle="modal" data-dismiss="modal">No, thanks</a>
           <a class="btn-primary buy-button" data-toggle="modal" data-dismiss="modal">Buy it</a>
-        </div> -->
+        </div>
       </div>
     </div>
   </div>
@@ -128,11 +128,23 @@ $(document).ready(function () {
   //buy the clothes
   $('.buy-button').click(function () {
     var wrapper = $(this).closest('.item-wrapper');
+
+
     //wrapper.addClass("hide");
-    $('.modal-fade').remove();
-    var name = wrapper.find('.item-name').html();
-    wrapper.html("<h3>" + name + " purchased! Find it in your closet.</h3></div>");
-    wrapper.fadeOut(5000);
+    // wrapper.find('.modal').removeClass('in').attr('display', 'none');
+    // $('body').removeClass('modal-open');
+    // $('.modal-backdrop').removeClass('in');
+    $('.modal').trigger('click');
+
+    // $('.modal-fade').remove();
+    setTimeout(function () {
+      var name = wrapper.find('.item-name').html();
+      wrapper.html("<h3>" + name + " purchased!<br>Find it in your closet.</h3></div>");
+      setTimeout(function () {
+        wrapper.fadeOut(300);
+      }, 4000);
+    }, 500);
+
   });
 });
 </script>

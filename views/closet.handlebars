@@ -54,7 +54,7 @@
     </div>
     <div class="info-bar">
       <div class="btnContainer info">
-        <a class="btn-primary" id="btn-undress">Get Nakey</a>
+        <a class="btn-primary btn-undress">Get Nakey</a>
         <a class="btn-primary" href="/shop">Shop</a>
       </div>
     </div>
@@ -66,13 +66,13 @@
   {{#closetItems}}
   <div class="item-wrapper">
     <div class="container-fluid shop-item">
-        <h4 class="item-name">{{ItemName}}</h4>
-        <p class="item-code">{{ItemCode}}</p>
-        <img src="{{ItemThumbnail}}" alt="Closet Item Image" height="auto" width="100px" style="margin:auto">
-        <img class="item-img" src="{{ItemImage}}" alt="Closet Item Image" height="auto" width="100px" style="margin:auto">
-        <div class="btnContainer">
-          <a class="btn-primary try-button" id="{{ItemID}}" data-toggle="modal" data-target="{{ModalTarget}}">Try it</a>
-          <a class="btn-primary wear-button" id="{{BuyID}}">Wear it</a>
+      <h4 class="item-name">{{ItemName}}</h4>
+      <p class="item-code">{{ItemCode}}</p>
+      <img src="{{ItemThumbnail}}" alt="Closet Item Image" height="auto" width="100px" style="margin:auto">
+      <img class="item-img" src="{{ItemImage}}" alt="Closet Item Image" height="auto" width="100px" style="margin:auto">
+      <div class="btnContainer">
+        <a class="btn-primary try-button" id="{{ItemID}}" data-toggle="modal" data-target="{{ModalTarget}}">Try it</a>
+        <a class="btn-primary wear-button" id="{{BuyID}}">Wear it</a>
       </div>
     </div>
 
@@ -89,12 +89,23 @@
             <canvas class="itemCanvas" width="350" height="350" style="border:1px solid #d3d3d3;">
             </canvas>
           </div>
+        </div>
       </div>
     </div>
-  </div>
 
-</div>
-{{/closetItems}}
+    <!-- view for taking off clothes -->
+      <div class="container-fluid shop-item-remove hide">
+        <h4 class="item-name">{{ItemName}}</h4>
+        <p class="item-code">{{ItemCode}}</p>
+        <img src="{{ItemThumbnail}}" alt="Closet Item Image" height="auto" width="100px" style="margin:auto">
+        <img class="item-img" src="{{ItemImage}}" alt="Closet Item Image" height="auto" width="100px" style="margin:auto">
+        <div class="btnContainer">
+          <a class="btn-primary btn-undress">Take it off</a>
+        </div>
+      </div>
+
+  </div>
+  {{/closetItems}}
 </div>
 </script>
 
@@ -128,6 +139,10 @@ $(document).ready(function () {
     var code = wrapperItem.find('.item-code').html();
     var version = document.getElementById("piggyVersion");
     $(version).html(code);
+    var wearView = wrapperItem.find('.shop-item');
+    var removeView = wrapperItem.find('.shop-item-remove');
+    removeView.removeClass("hide");
+    wearView.addClass("hide");
     if ($(version).text() == 'B') {
       $(pig).html("<img id ='avatar-image' src='../images/piggy-avatar-1.png' alt='Pig Avatar' width= '50%'>");
     } else if ($(version).text() == 'C') {
@@ -138,15 +153,19 @@ $(document).ready(function () {
     }
   });
 
-  $('#btn-undress').click(function () {
+  $('.btn-undress').click(function () {
     var pig = document.getElementById("piggy-display");
     var wrapperItem = $(this).closest('.item-wrapper');
     var code = wrapperItem.find('.item-code').html();
     var version = document.getElementById("piggyVersion");
     $(version).html(code);
+    var wearView = wrapperItem.find('.shop-item');
+    var removeView = wrapperItem.find('.shop-item-remove');
+    removeView.addClass("hide");
+    wearView.removeClass("hide");
     $(pig).html("<img id ='avatar-image' src='../images/piggy-avatar.png' alt='Pig Avatar' width= '50%'>");
   });
-  });
-  </script>
+});
+</script>
 </body>
 </html>

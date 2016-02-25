@@ -33,17 +33,24 @@ html, body {
   border: 1px solid transparent;
   background-color: #e0e0e0;
 }
-/* Button Related */
-#signupBtn {
+
+.btnContainer {
+  padding: 20px 30px;
+  text-align: center;
+}
+
+.btn-primary {
   background-color: #333;
+  display: inline-block;
   color: #fff;
-  font-weight: 500;
-  font-size: 14px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
   letter-spacing: 1.3px;
   text-decoration: none;
   text-transform: uppercase;
-  padding: 15px 25px;
+  padding: 0px 30px 10px 30px;
+}
 
-  top: 45%;
-  position: relative;
+.btn-primary a {
+  color: #fff;
 }
