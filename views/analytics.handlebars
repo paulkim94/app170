@@ -22,55 +22,56 @@
 			var entertainment = 0;
 			var personalCare = 0;
 
-			console.log(data["categorySpending"]);
-
-			for( i = 0; i < data["categorySpending"].length; i++ ) {
-				if(data["categorySpending"][i].category == "Meals/Drinks") {
-					if( mealsDrinks == 0 ) {
-						mealsDrinks = Number(data["categorySpending"][i].spent);
+			//console.log(data["categorySpending"]);
+			if( data != null ) {
+				for( i = 0; i < data["categorySpending"].length; i++ ) {
+					if(data["categorySpending"][i].category == "Meals/Drinks") {
+						if( mealsDrinks == 0 ) {
+							mealsDrinks = Number(data["categorySpending"][i].spent);
+						}
+						else {
+							mealsDrinks = mealsDrinks + Number(data["categorySpending"][i].spent);
+						}
 					}
-					else {
-						mealsDrinks = mealsDrinks + Number(data["categorySpending"][i].spent);
+					if(data["categorySpending"][i].category == "Necessities") {
+						if( necessities == 0 ) {
+							necessities = Number(data["categorySpending"][i].spent);
+						}
+						else {
+							necessities = necessities + Number(data["categorySpending"][i].spent);
+						}
 					}
-				}
-				if(data["categorySpending"][i].category == "Necessities") {
-					if( necessities == 0 ) {
-						necessities = Number(data["categorySpending"][i].spent);
+					if(data["categorySpending"][i].category == "Clothes") {
+						if( clothes == 0 ) {
+							clothes = Number(data["categorySpending"][i].spent);
+						}
+						else {
+							clothes = clothes + Number(data["categorySpending"][i].spent);
+						}
 					}
-					else {
-						necessities = necessities + Number(data["categorySpending"][i].spent);
+					if(data["categorySpending"][i].category == "Personal Care") {
+						if( personalCare == 0 ) {
+							personalCare = Number(data["categorySpending"][i].spent);
+						}
+						else {
+							personalCare = personalCare + Number(data["categorySpending"][i].spent);
+						}
 					}
-				}
-				if(data["categorySpending"][i].category == "Clothes") {
-					if( clothes == 0 ) {
-						clothes = Number(data["categorySpending"][i].spent);
+					if(data["categorySpending"][i].category == "Entertainment") {
+						if( entertainment == 0 ) {
+							entertainment = Number(data["categorySpending"][i].spent);
+						}
+						else {
+							entertainment = entertainment + Number(data["categorySpending"][i].spent);
+						}
 					}
-					else {
-						clothes = clothes + Number(data["categorySpending"][i].spent);
-					}
-				}
-				if(data["categorySpending"][i].category == "Personal Care") {
-					if( personalCare == 0 ) {
-						personalCare = Number(data["categorySpending"][i].spent);
-					}
-					else {
-						personalCare = personalCare + Number(data["categorySpending"][i].spent);
-					}
-				}
-				if(data["categorySpending"][i].category == "Entertainment") {
-					if( entertainment == 0 ) {
-						entertainment = Number(data["categorySpending"][i].spent);
-					}
-					else {
-						entertainment = entertainment + Number(data["categorySpending"][i].spent);
-					}
-				}
-				if(data["categorySpending"][i].category == "Transportation") {
-					if( transportation == 0 ) {
-						transportation = Number(data["categorySpending"][i].spent);
-					}
-					else {
-						transportation = transportation + Number(data["categorySpending"][i].spent);
+					if(data["categorySpending"][i].category == "Transportation") {
+						if( transportation == 0 ) {
+							transportation = Number(data["categorySpending"][i].spent);
+						}
+						else {
+							transportation = transportation + Number(data["categorySpending"][i].spent);
+						}
 					}
 				}
 			}
