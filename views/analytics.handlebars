@@ -11,15 +11,79 @@
 	    <script type="text/javascript">
 			google.charts.load("current", {packages:["corechart"]});
 			google.charts.setOnLoadCallback(drawChart);
+
+			var data = JSON.parse(localStorage.getItem("categorySpending"));
+
+			var i;
+			var mealsDrinks = 0;
+			var necessities = 0;
+			var clothes = 0;
+			var transportation = 0;
+			var entertainment = 0;
+			var personalCare = 0;
+
+			console.log(data["categorySpending"]);
+
+			for( i = 0; i < data["categorySpending"].length; i++ ) {
+				if(data["categorySpending"][i].category == "Meals/Drinks") {
+					if( mealsDrinks == 0 ) {
+						mealsDrinks = Number(data["categorySpending"][i].spent);
+					}
+					else {
+						mealsDrinks = mealsDrinks + Number(data["categorySpending"][i].spent);
+					}
+				}
+				if(data["categorySpending"][i].category == "Necessities") {
+					if( necessities == 0 ) {
+						necessities = Number(data["categorySpending"][i].spent);
+					}
+					else {
+						necessities = necessities + Number(data["categorySpending"][i].spent);
+					}
+				}
+				if(data["categorySpending"][i].category == "Clothes") {
+					if( clothes == 0 ) {
+						clothes = Number(data["categorySpending"][i].spent);
+					}
+					else {
+						clothes = clothes + Number(data["categorySpending"][i].spent);
+					}
+				}
+				if(data["categorySpending"][i].category == "Personal Care") {
+					if( personalCare == 0 ) {
+						personalCare = Number(data["categorySpending"][i].spent);
+					}
+					else {
+						personalCare = personalCare + Number(data["categorySpending"][i].spent);
+					}
+				}
+				if(data["categorySpending"][i].category == "Entertainment") {
+					if( entertainment == 0 ) {
+						entertainment = Number(data["categorySpending"][i].spent);
+					}
+					else {
+						entertainment = entertainment + Number(data["categorySpending"][i].spent);
+					}
+				}
+				if(data["categorySpending"][i].category == "Transportation") {
+					if( transportation == 0 ) {
+						transportation = Number(data["categorySpending"][i].spent);
+					}
+					else {
+						transportation = transportation + Number(data["categorySpending"][i].spent);
+					}
+				}
+			}
+
 			function drawChart() {
 			var data = google.visualization.arrayToDataTable([
 			  ['Expense Category', 'Dollars Spent'],
-				['Necessities', 100],
-			  ['Clothes', 150],
-				['Meals/Drinks', 50],
-				['Personal Care', 25],
-				['Entertainment', 100],
-				['Transportation', 150],
+				['Necessities', necessities],
+			  ['Clothes', clothes],
+				['Meals/Drinks', mealsDrinks],
+				['Personal Care', personalCare],
+				['Entertainment', entertainment],
+				['Transportation', transportation],
 			]);
 			var options = {
 			  pieHole: 0.5,
@@ -40,6 +104,7 @@
 
  	</head>
   <body>
+
 
     <nav class="navbar navbar-default">
 		<div class="container-fluid">

@@ -58,7 +58,10 @@ app.get('/setup', setup.view);
 app.get('/addTransaction', transaction.addTransaction);
 
 app.get('/viewTransactions', transaction.viewTransactions);
+
 app.get('/deleteTransactions', transaction.deleteTransactions);
+app.post('/deleteTransactions', transaction.deleteTransactions);
+
 // Example route
 // app.get('/users', user.list);
 

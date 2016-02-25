@@ -1,13 +1,27 @@
-console.log(localStorage.getItem("weeklyIndicatorAmnt"));
-
 var weeklyAmnt = localStorage.getItem("weeklyIndicatorAmnt");
-var dailyAmnt = localStorage.getItem("dailyIndicatorAmnt");
+var dailyAmnt = localStorage.getItem("dailyIndicatorAmnt"); // updated daily budget indicator
 
-//$("#weeklyIndicatorNum").html("$" + weeklyAmnt);
-$("#weeklyIndicatorNum").html("$" + dailyAmnt);
+var originalAmnt = localStorage.getItem("originalIndicatorAmnt"); // original daily budget indicator
+var totalSpent = localStorage.getItem("totalAmntSpent");
 
 
-$("#divCircle").attr("class", "c100 p0 huge green");
+console.log(dailyAmnt);
+console.log(originalAmnt);
+console.log(totalSpent);
+
+var percentUsed = 100 - ((dailyAmnt / originalAmnt).toFixed(2) * 100);
+
+console.log("Percent Used: ", percentUsed);
+
+if( dailyAmnt == null ) {
+  dailyAmnt = originalAmnt;
+  $("#weeklyIndicatorNum").html("$" + dailyAmnt);
+}
+else {
+  $("#weeklyIndicatorNum").html("$" + dailyAmnt);
+}
+
+$("#divCircle").attr("class", "c100 p" + percentUsed + " huge green");
 
 inputData();
 
@@ -21,10 +35,14 @@ function inputData() {
   var mm = today.getMonth() + 1;
   var yyyy = today.getFullYear();
 
+  if( totalSpent == null ) {
+    totalSpent = 0;
+  }
+
   // Indicator description
   var descriptionIndicator = "TODAY: " + mm + "/" + dd +"/" + yyyy +
                               " <br> DAILY SPENDING LIMIT: $" +
-                         dailyAmnt + "<br> CURRENTLY SPENT: $0";
+                         dailyAmnt + "<br> CURRENTLY SPENT: $" + totalSpent;
 
   $("#weeklyIndicatorDescription").html(descriptionIndicator);
 
@@ -48,3 +66,26 @@ function updateProgressBar() {
   $("#goalProgress").attr("style", "width: 0%");
   $("#savedDescription").html("$0 / " + goalAmnt + " saved");
 }
+
+$("#submitBtn").click(function(e) {
+  var spent = $("#amount").val();
+
+  console.log(spent);
+
+  if( totalSpent == null ) {
+    totalSpent = spent;
+  }
+  else {
+    var totalSum = Number(totalSpent) + Number(spent);
+    console.log(totalSum);
+    totalSpent = totalSum;
+  }
+
+  var indicatorCircleValue = localStorage.getItem("dailyIndicatorAmnt");
+
+  var updatedCircleValue = (indicatorCircleValue - totalSpent).toFixed(2);
+
+  localStorage.setItem("totalAmntSpent", totalSpent);
+  localStorage.setItem("dailyIndicatorAmnt", updatedCircleValue);
+  localStorage.setItem("originalIndicatorAmnt", indicatorCircleValue);
+});

@@ -28,19 +28,20 @@ exports.addTransaction = function(req, res) {
 
 exports.deleteTransactions = function(req, res) {
 
-  //data["transactions"][1].pop();
-  //var lastClickedID = localStorage.getItem("clickedId");
+  var removed = req.body;
+  var removedID = removed.transactionID;
 
-  //data["transactions"][lastClickedID].splice(lastClickedID, 1);
-  /*for(i = 0; i < data["transactions"].length; i++) {
-    if( data["transactions"][i].transactionID == lastClickedID ) {
+  console.log(removed);
+  console.log(removedID);
+
+  var i;
+
+  for( i = 0; i < data["transactions"].length; i++ ) {
+    if( data["transactions"][i].transactionID == removedID ) {
+      console.log("I = " + i);
       data["transactions"].splice(i, 1);
     }
-  }*/
-
-  //if( data["transactions"][0].transactionID == 0 ) {
-  //  data["transactions"].splice(0, 1);
-  //}
+  }
 
   res.render('transaction', data);
   res.redirect('/transaction');
