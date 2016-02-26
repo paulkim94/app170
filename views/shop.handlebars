@@ -129,14 +129,8 @@ $(document).ready(function () {
   $('.buy-button').click(function () {
     var wrapper = $(this).closest('.item-wrapper');
 
-
-    //wrapper.addClass("hide");
-    // wrapper.find('.modal').removeClass('in').attr('display', 'none');
-    // $('body').removeClass('modal-open');
-    // $('.modal-backdrop').removeClass('in');
     $('.modal').trigger('click');
 
-    // $('.modal-fade').remove();
     setTimeout(function () {
       var name = wrapper.find('.item-name').html();
       wrapper.html("<h3>" + name + " purchased!<br>Find it in your closet.</h3></div>");

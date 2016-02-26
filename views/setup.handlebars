@@ -42,14 +42,14 @@
       <!-- First section -->
       <div class="setup1">
         <h1>Welcome to Piggy!</h1>
-        <h4>Before you set a savings goal, we need information about your financial situation!</h4>
+        <h4>Piggy will help you save money for the things that matter to you. Based on your saving goal, this guide will calculate your daily spending budget. Stick to your budget, and you'll easily reach your goal!</h4>
         <hr>
         <h3>Step 1: Tell us about your monthly financial situation.</h3>
         <form>
           <p>What is your income per month?</p>
             <input type="number" id="monthlyIncome" name="monthlyIncome" placeholder="$ Enter an amount">
             <br><br> <!-- add margins in css later and remove <br> -->
-          <p>How much goes towards necessities (rent, utilities, groceries, insurance, fees)?</p>
+          <p>How much goes towards necessities (rent, utilities, groceries, insurance, fees, etc.)?</p>
             <input type="text" id="necessities" name="necessities" placeholder="$ Enter an amount">
             <br><br> <!-- add margins in css later and remove <br> -->
           <p>How much did you spend this month so far EXCLUDING necessities?</p>
@@ -61,17 +61,17 @@
       </div>
 
       <div class="setup2 hidden">
-        <h4>Piggy is going to help you save money for the things that matter to you.</h4>
+        <h4><br>Piggy will help you save money for the things that matter to you.</h4>
         <hr>
-        <h3>Step 2: List a savings goal.</h3>
+        <h3>Step 2: Tell us about your goal.</h3>
         <form>
-          <p>How much do you need to save?</p>
-            <input type="number" id="goalAmount" name="goalAmount" placeholder="$ Enter an amount">
-            <br><br>
-          <p>For what?</p>
+          <p>What are you saving up for?</p>
             <input type="text" id="goalName" name="goalName" placeholder="Name your goal">
             <br><br>
-          <p>By when?</p>
+          <p>How much will it cost?</p>
+            <input type="number" id="goalAmount" name="goalAmount" placeholder="$ Enter an amount">
+            <br><br>
+          <p>When do you need to finish saving by?</p>
             <input type="text" id="date" name="goalDate" placeholder="Date">
         </form>
         <div class="btnContainer">
@@ -83,17 +83,15 @@
       <div class="setup3 hidden">
         <h3>Review your saving goal &amp; financial information:</h3>
         <hr>
-        <h4 id="goalDescription"></h4>
+        <h4 class="monthlyDescription"></h4>
+        <h4 class="monthlyBudget"></h4>
+        <h4 class="goalDescription"></h4>
         <hr>
-        <h4 id="monthlyDescription"></h4>
+        <h3>Your Saving Plan</h3>
+        <h4 class="newBudget"></h4>
+        <br>
+        <h4 class="savingsDescription" style="font-weight: bold"></h4>
         <hr>
-        <h4 id="monthlyBudget"></h4>
-        <hr>
-
-        <h4>Sit back and we'll calculate a spending budget that ensures that
-        you save the amount you specified by the deadline!</h4>
-
-        <h4 id="newBudget" style="font-weight: bold"></h4>
 
         <div class="btnContainer">
           <a class="btn-primary" id='backButton3' href='#'>&lsaquo; Back</a>
@@ -103,13 +101,15 @@
 
       <div class="setup4 hidden">
         <h1>Congratulations!</h1>
-        <h2>You just finished setting your saving goal.</h2>
+        <h3>You just finished setting your saving goal:</h3>
+        <h4 class="goalDescription"></h4>
+        <h4 class="newBudget"></h4>
+        <h4 class="savingsDescription"></h4>
+        <p><i>(If you need to, you can edit information about your goal on the dashboard.)</i></p>
         <hr>
-        <h4>You can edit information about your goal on the dashboard!</h4>
-        <h4>If you meet your saving goal every week, you will be rewarded Piggy Coins! Piggy Coins can be used to buy items to dress up your Piggy avatar.</h4>
-        <br>
+        <h4>If you meet your saving goal every week, you will earn Piggy Coins! You can use Piggy Coins to buy items for your Piggy avatar.</h4>
         <hr>
-        <h3>Let's meet your friend, Piggy!</h3>
+        <h3>Let's meet your new friend, Piggy Jr!</h3>
         <div class="btnContainer">
           <a class="btn-primary" id='finishButton' href='/dashboard'>Finish</a>
         </div>

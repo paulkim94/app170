@@ -6,8 +6,8 @@ $(document).ready(function() {
 })
 
 /*
- * Function that is called when the document is ready.
- */
+* Function that is called when the document is ready.
+*/
 function initializePage() {
 
 	/* Sharable variables */
@@ -35,11 +35,11 @@ function initializePage() {
 
 		$(".setup1").addClass("hidden");
 		$(".setup2").removeClass("hidden");
- 	});
+	});
 
 	/* When next button in Step 2 is clicked */
- 	$("#nextButton2").click(function(e) {
- 		console.log("Next Clicked");
+	$("#nextButton2").click(function(e) {
+		console.log("Next Clicked");
 
 		/* Input info from Step 2. */
 
@@ -51,109 +51,151 @@ function initializePage() {
 
 		/* TODO Empty input validation*/
 		/*if(goalAmount == null || goalAmount == "") {
-			validationMsg = "- Please enter a goal amount";
-		}
-		if(goalName == null || goalName == "") {
-			validationMsg = "- Please enter a name for your goal";
-		}
-		if(goalDate == null || goalDate == "") {
-			validationMsg = "- Please enter a date";
-		}
-		if(validationMsg != null) {
-			alert(validationMsg);
-			return;
-		}*/
+		validationMsg = "- Please enter a goal amount";
+	}
+	if(goalName == null || goalName == "") {
+	validationMsg = "- Please enter a name for your goal";
+}
+if(goalDate == null || goalDate == "") {
+validationMsg = "- Please enter a date";
+}
+if(validationMsg != null) {
+alert(validationMsg);
+return;
+}*/
 
-		localStorage.setItem("goalTitle", goalName);
-		localStorage.setItem("goalAmnt", goalAmount);
+localStorage.setItem("goalTitle", goalName);
+localStorage.setItem("goalAmnt", goalAmount);
 
-		$(".setup2").addClass("hidden");
-		$(".setup3").removeClass("hidden");
+$(".setup2").addClass("hidden");
+$(".setup3").removeClass("hidden");
 
-		/* To be added on summary portion of setup */
+/* To be added on summary portion of setup */
 
-		goalDescription = "GOAL: I want to save $" + goalAmount +
-		" for a " + goalName + " by " + goalDate + ".";
+goalDescription = "GOAL: I want to save $" + goalAmount +
+" for a " + goalName + " by " + goalDate + ".";
 
-		$("#goalDescription").html(goalDescription);
-		/* Returns number of days in any month */
-		var getDaysInMonth = function(month, year) {
-			return new Date(year, month, 0).getDate();
-		}
+$("#goalDescription").html(goalDescription);
+/* Returns number of days in any month */
+var getDaysInMonth = function(month, year) {
+	return new Date(year, month, 0).getDate();
+}
 
-		/* Actual date */
-		var today = new Date();
-		var dd = today.getDate();
-		var mm = today.getMonth() + 1;
-		var yyyy = today.getFullYear();
+/* Actual date */
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth() + 1;
+var yyyy = today.getFullYear();
 
-		/* Number of days remaining this month */
-		var daysRemaining = getDaysInMonth(mm, yyyy) - dd;
+/*Convert month to string*/
+var currentMonth;
+switch (mm) {
+	case 1:
+	currentMonth = "January";
+	break;
+	case 2:
+	currentMonth = "February";
+	break;
+	case 3:
+	currentMonth = "March";
+	break;
+	case 4:
+	currentMonth = "April";
+	break;
+	case 5:
+	currentMonth = "May";
+	break;
+	case 6:
+	currentMonth = "June";
+	break;
+	case 7:
+	currentMonth = "July";
+	break;
+	case 8:
+	currentMonth = "August";
+	break;
+	case 9:
+	currentMonth = "September";
+	break;
+	case 10:
+	currentMonth = "October";
+	break;
+	case 11:
+	currentMonth = "November";
+	break;
+	case 12:
+	currentMonth = "December";
+	break;
+}
 
-		console.log(daysRemaining);
+/* Number of days remaining this month */
+var daysRemaining = getDaysInMonth(mm, yyyy) - dd;
 
-		/* The date to save up by */
-		var dateGoal = new Date(goalDate);
-		var goalDateDay = dateGoal.getDate();
-		var goalDateMonth = dateGoal.getMonth() + 1;
-		console.log(goalDateDay);
+console.log(daysRemaining);
 
-		// The monthly available budget
-		var monthlyBudget = monthlyIncome - necessities - spentSoFar;
+/* The date to save up by */
+var dateGoal = new Date(goalDate);
+var goalDateDay = dateGoal.getDate();
+var goalDateMonth = dateGoal.getMonth() + 1;
+console.log(goalDateDay);
 
-		var monthlyIncomeDescription = "MONTHLY INCOME: $" + monthlyIncome + " per month";
+// The monthly available budget
+var monthlyBudget = monthlyIncome - necessities - spentSoFar;
 
-		var budgetDescription = "CURRENT MONTH BUDGET: My budget after paying for necessities is $" +
-														monthlyBudget + ".";
+var monthlyIncomeDescription = "MONTHLY INCOME: $" + monthlyIncome + " per month";
 
-		var oneDay = 24 * 60 * 60 * 1000;
-		var diffDays = Math.round(Math.abs((dateGoal.getTime() - today.getTime())/(oneDay)));
+var budgetDescription = "MONTHLY SPENDING ALLOWANCE: After paying for necessities, I have $" +
+monthlyBudget + " left to spend each month.";
 
-		localStorage.setItem("daysLeft", diffDays);
-		console.log(diffDays);
+var oneDay = 24 * 60 * 60 * 1000;
+var diffDays = Math.round(Math.abs((dateGoal.getTime() - today.getTime())/(oneDay)));
 
-		var savingsDescription = "To reach your goal, you need to save $" +
-														 (goalAmount / diffDays).toFixed(2) +
-														 " per day for the next " + diffDays + " days.";
+localStorage.setItem("daysLeft", diffDays);
+console.log(diffDays);
 
-		var newBudgetDescription = "Your new spending budget is $" +
-		((monthlyBudget / daysRemaining) - (goalAmount / diffDays)).toFixed(2) +
-		" per day for the remaining month";
+var savingsDescription = "After this month, you need to save $" +
+(goalAmount / diffDays).toFixed(2) +
+" every day for the next " + diffDays + " days. Then, you'll reach your goal!";
 
-		//localStorage.setItem("weeklyIndicatorAmnt", (((monthlyBudget / 28) - (goalAmount / diffDays)).toFixed(2) * 7).toFixed(2) )
-		localStorage.setItem("dailyIndicatorAmnt", ((monthlyBudget / daysRemaining) - (goalAmount / diffDays)).toFixed(2) );
+var newBudgetDescription = "For the rest of " + currentMonth + ", the maximum you should spend per day is $" +
+((monthlyBudget / daysRemaining) - (goalAmount / diffDays)).toFixed(2) +
+".";
 
-		$("#monthlyDescription").html(monthlyIncomeDescription);
-		$("#monthlyBudget").html(budgetDescription);
+//localStorage.setItem("weeklyIndicatorAmnt", (((monthlyBudget / 28) - (goalAmount / diffDays)).toFixed(2) * 7).toFixed(2) )
+localStorage.setItem("dailyIndicatorAmnt", ((monthlyBudget / daysRemaining) - (goalAmount / diffDays)).toFixed(2) );
 
-		$("#savingsGuide").html(savingsDescription);
-		$("#newBudget").html(newBudgetDescription);
+$(".monthlyDescription").html(monthlyIncomeDescription);
+$(".savingsDescription").html(savingsDescription);
+$(".monthlyBudget").html(budgetDescription);
 
- 		$(".setup2").addClass("hidden");
- 		$(".setup3").removeClass("hidden");
+$(".savingsGuide").html(savingsDescription);
+$(".newBudget").html(newBudgetDescription);
 
- 	});
+$(".setup2").addClass("hidden");
+$(".setup3").removeClass("hidden");
 
- 	$("#backButton2").click(function(e) {
- 		console.log("Back Clicked");
- 		$(".setup2").addClass("hidden");
- 		$(".setup1").removeClass("hidden");
- 	});
+});
 
-	$("#confirm").click(function(e) {
-		$(".setup3").addClass("hidden");
-		$(".setup4").removeClass("hidden");
-	});
+$("#backButton2").click(function(e) {
+	console.log("Back Clicked");
+	$(".setup2").addClass("hidden");
+	$(".setup1").removeClass("hidden");
+});
 
- 	$("#nextButton").click(function(e) {
- 		console.log("Next Clicked");
- 		$(".setup3").addClass("hidden");
- 		$(".setup4").removeClass("hidden");
- 	});
+$("#confirm").click(function(e) {
+	$(".setup3").addClass("hidden");
+	$(".setup4").removeClass("hidden");
+});
 
- 	$("#backButton3").click(function(e) {
- 		console.log("Back Clicked");
- 		$(".setup3").addClass("hidden");
- 		$(".setup2").removeClass("hidden");
- 	});
- }
+$("#nextButton").click(function(e) {
+	console.log("Next Clicked");
+	$(".setup3").addClass("hidden");
+	$(".setup4").removeClass("hidden");
+});
+
+$("#backButton3").click(function(e) {
+	console.log("Back Clicked");
+	$(".setup3").addClass("hidden");
+	$(".setup2").removeClass("hidden");
+});
+}

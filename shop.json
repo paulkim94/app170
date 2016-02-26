@@ -1,22 +1,24 @@
 {
   "storeItems": [
   {
+    "ItemID" : "item0",
     "ItemName": "Blue Shades",
     "ItemThumbnail": "../images/blue-shades-thumbnail.png",
     "ItemImage": "../images/blue-shades.png",
     "ItemPrice": 10,
-    "ItemID" : "item0",
     "BuyID" : "buy0",
+    "ItemCode" : "B",
     "ModalTarget": "#item0modal",
     "ModalId": "item0modal"
   },
   {
+    "ItemID" : "item1",
     "ItemName": "Gold Shades",
     "ItemThumbnail": "../images/gold-shades-thumbnail.png",
     "ItemImage": "../images/gold-shades.png",
     "ItemPrice": 10,
-    "ItemID" : "item1",
     "BuyID" : "buy1",
+    "ItemCode" : "C",
     "ModalTarget": "#item1modal",
     "ModalId": "item1modal"
   }

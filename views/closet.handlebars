@@ -94,7 +94,7 @@
     </div>
 
     <!-- view for taking off clothes -->
-      <div class="container-fluid shop-item-remove hide">
+      <div class="container-fluid shop-item-remove">
         <h4 class="item-name">{{ItemName}}</h4>
         <p class="item-code">{{ItemCode}}</p>
         <img src="{{ItemThumbnail}}" alt="Closet Item Image" height="auto" width="100px" style="margin:auto">
@@ -141,8 +141,8 @@ $(document).ready(function () {
     $(version).html(code);
     var wearView = wrapperItem.find('.shop-item');
     var removeView = wrapperItem.find('.shop-item-remove');
-    removeView.removeClass("hide");
-    wearView.addClass("hide");
+    removeView.show();
+    wearView.hide();
     if ($(version).text() == 'B') {
       $(pig).html("<img id ='avatar-image' src='../images/piggy-avatar-1.png' alt='Pig Avatar' width= '50%'>");
     } else if ($(version).text() == 'C') {
@@ -161,8 +161,8 @@ $(document).ready(function () {
     $(version).html(code);
     var wearView = wrapperItem.find('.shop-item');
     var removeView = wrapperItem.find('.shop-item-remove');
-    removeView.addClass("hide");
-    wearView.removeClass("hide");
+    removeView.hide();
+    wearView.show();
     $(pig).html("<img id ='avatar-image' src='../images/piggy-avatar.png' alt='Pig Avatar' width= '50%'>");
   });
 });
