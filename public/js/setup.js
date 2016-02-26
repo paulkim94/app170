@@ -133,6 +133,11 @@ var daysRemaining = getDaysInMonth(mm, yyyy) - dd;
 
 console.log(daysRemaining);
 
+goalDescription = "GOAL: I want to save $" + goalAmount +
+		" for a " + goalName + " by " + goalDate + ".";
+
+$(".goalDescription").html(goalDescription);
+
 /* The date to save up by */
 var dateGoal = new Date(goalDate);
 var goalDateDay = dateGoal.getDate();
@@ -155,7 +160,7 @@ console.log(diffDays);
 
 var savingsDescription = "After this month, you need to save $" +
 (goalAmount / diffDays).toFixed(2) +
-" every day for the next " + diffDays + " days. Then, you'll reach your goal!";
+" every day for the next " + (diffDays - daysRemaining) + " days. Then, you'll reach your goal!";
 
 var newBudgetDescription = "For the rest of " + currentMonth + ", the maximum you should spend per day is $" +
 ((monthlyBudget / daysRemaining) - (goalAmount / diffDays)).toFixed(2) +
