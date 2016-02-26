@@ -9,6 +9,8 @@ var path = require('path');
 var handlebars = require('express3-handlebars')
 
 var index = require('./routes/index');
+var index2 = require('./routes/index2');
+
 var transaction = require('./routes/transaction');
 var analytics = require('./routes/analytics');
 var setting = require('./routes/setting');
@@ -18,6 +20,10 @@ var closet = require('./routes/closet');
 var shop = require('./routes/shop');
 var login = require('./routes/login');
 var setup = require('./routes/setup');
+
+// added for redesign
+var piggy = require('./routes/piggy');
+
 // Example route
 // var user = require('./routes/user');
 
@@ -46,6 +52,9 @@ if ('development' == app.get('env')) {
 // Add routes here
 app.get('/', splash.view);
 app.get('/dashboard', index.view);
+
+app.get('/dashboard2', index2.view); // redesign dashboard page
+
 app.get('/transaction', transaction.view);
 app.get('/analytics', analytics.view);
 app.get('/setting', setting.view);
@@ -56,11 +65,12 @@ app.get('/shop', shop.view);
 app.get('/login', login.view);
 app.get('/setup', setup.view);
 app.get('/addTransaction', transaction.addTransaction);
-
 app.get('/viewTransactions', transaction.viewTransactions);
 
 app.get('/deleteTransactions', transaction.deleteTransactions);
 app.post('/deleteTransactions', transaction.deleteTransactions);
+
+app.get('/piggy', piggy.view);
 
 // Example route
 // app.get('/users', user.list);
