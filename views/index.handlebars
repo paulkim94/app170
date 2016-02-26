@@ -34,13 +34,12 @@
 		<![endif]-->
 		<script>
 			$(function() {
-				$( "#date" ).datepicker();
+				$("#date").datepicker();
 			});
 		</script>
 
 	</head>
 	<body>
-		<!--{{transactions.[0].amount}}-->
 
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
@@ -71,7 +70,6 @@
 			</div><!-- /.container-fluid -->
 		</nav>
 
-
     <div class="container-fluid">
 			<!-- Weekly indicator description -->
 			<div class="row">
@@ -81,7 +79,7 @@
 
     	<div class="row">
     		<div class="indicatorContainer">
-					<div id="divCircle" class="c100 p75 huge green">
+					<div id="divCircle" class="c100 p0 huge green">
 						<span id="weeklyIndicatorNum"></span>
 						<div class="slice">
 					  		<div class="bar"></div>
@@ -176,27 +174,13 @@
 						</div>
 
 						<div class="progress" style="width: 50%; margin: 0 auto">
-							<!--<p>$ 0 / $500 saved</p>-->
 							<div id="goalProgress" class="progress-bar" role="progressbar" aria-valuenow="0"
 							aria-valuemin="0" aria-valuemax="" style="width: 60%">
 							</div>
 						</div>
 						<p id="savedDescription" style="text-align: center; margin-top: 5px"></p>
-
-						<br>
-						<!--<div class="btnContainer">
-							<a class="btn-primary" href="#" data-toggle="modal" data-target="">
-								+ Add a goal
-							</a>
-						</div>
-						<br>-->
       </div>
 		</div>
-
-		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<!-- Include all compiled plugins (below), or include individual files as needed -->
-		<script src="/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
 		<script src="js/home.js"></script>
 	</body>
 </html>
