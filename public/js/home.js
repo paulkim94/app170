@@ -70,7 +70,22 @@ function updateProgressBar() {
 $("#submitBtn").click(function(e) {
   var spent = $("#amount").val();
 
-  console.log(spent);
+  var category = $("#category").val();
+
+  var catSpend = { "category" : category, "spent" : spent}
+  var catData = { "categorySpending": [] };
+  catData["categorySpending"].push(catSpend);
+
+  if( localStorage.getItem("categorySpending") == null ) {
+    localStorage.setItem("categorySpending", JSON.stringify(catData));
+    console.log(catData["categorySpending"]);
+  }
+  else {
+    var updatedCategorySpending = JSON.parse(localStorage.getItem("categorySpending"));
+    console.log(updatedCategorySpending);
+    updatedCategorySpending["categorySpending"].push(catSpend);
+    localStorage.setItem("categorySpending", JSON.stringify(updatedCategorySpending));
+  }
 
   if( totalSpent == null ) {
     totalSpent = spent;
