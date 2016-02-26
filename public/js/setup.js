@@ -11,7 +11,6 @@ $(document).ready(function() {
 function initializePage() {
 
 	/* Sharable variables */
-
 	// Inputs from Step 1.
 	var monthlyIncome;
 	var necessities;
@@ -25,13 +24,29 @@ function initializePage() {
 
 	/* When nextButton in Step 1 is clicked */
 	$("#nextButton1").click(function(e) {
-
 		/* Input info from Step 1. */
 		monthlyIncome = $("#monthlyIncome").val();
 		necessities = $("#necessities").val();
 		spentSoFar = $("#spentSoFar").val();
 
-		console.log(monthlyIncome + necessities + spentSoFar);
+		var validationMsg = "";
+
+		/* TODO Empty input validation*/
+		if(monthlyIncome == null || monthlyIncome == "") {
+			validationMsg = "- Please enter your monthly income\n";
+		}
+		if(necessities == null || necessities == "") {
+			validationMsg += "- Please enter how much you spend on necessities\n";
+		}
+		if(spentSoFar == null || spentSoFar == "") {
+			validationMsg += "- Please enter how much you spent so far";
+		}
+		if(validationMsg != "") {
+			alert(validationMsg);
+			return;
+		}
+
+		//console.log(monthlyIncome + necessities + spentSoFar);
 
 		$(".setup1").addClass("hidden");
 		$(".setup2").removeClass("hidden");
@@ -42,30 +57,29 @@ function initializePage() {
 		console.log("Next Clicked");
 
 		/* Input info from Step 2. */
-
 		goalAmount = $("#goalAmount").val();
 		goalName = $("#goalName").val();
 		goalDate = $("#date").val();
 
-		//var validationMsg;
+		localStorage.setItem("goalTitle", goalName);
+		localStorage.setItem("goalAmnt", goalAmount);
+
+		var validationMsg = "";
 
 		/* TODO Empty input validation*/
-		/*if(goalAmount == null || goalAmount == "") {
-		validationMsg = "- Please enter a goal amount";
-	}
-	if(goalName == null || goalName == "") {
-	validationMsg = "- Please enter a name for your goal";
-}
-if(goalDate == null || goalDate == "") {
-validationMsg = "- Please enter a date";
-}
-if(validationMsg != null) {
-alert(validationMsg);
-return;
-}*/
-
-localStorage.setItem("goalTitle", goalName);
-localStorage.setItem("goalAmnt", goalAmount);
+		if(goalName == null || goalName == "") {
+			validationMsg = "- Please enter a name for your goal\n";
+		}
+		if(goalAmount == null || goalAmount == "") {
+			validationMsg += "- Please enter how much you have to save\n";
+		}
+		if(goalDate == null || goalDate == "") {
+			validationMsg += "- Please enter the date you have to save by";
+		}
+		if(validationMsg != "") {
+			alert(validationMsg);
+			return;
+		}
 
 $(".setup2").addClass("hidden");
 $(".setup3").removeClass("hidden");
