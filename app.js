@@ -67,6 +67,9 @@ app.get('/setup', setup.view);
 app.get('/addTransaction', transaction.addTransaction);
 app.get('/viewTransactions', transaction.viewTransactions);
 
+app.get('/editTransaction', transaction.editTransaction);
+app.post('/editTransaction', transaction.editTransaction);
+
 app.get('/deleteTransactions', transaction.deleteTransactions);
 app.post('/deleteTransactions', transaction.deleteTransactions);
 

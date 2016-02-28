@@ -83,7 +83,7 @@
 	            <td>{{category}}</td>
 	            <td>{{amount}}</td>
 	            <td id="editDeleteTransaction">
-	              <a href="#">Edit</a>
+	              <a class="editLink" id="{{transactionID}}" href="#" data-toggle="modal" data-target="#myModal" >Edit</a>
 	              <a class="deleteLink" id="{{transactionID}}" href="/deleteTransactions">Delete</a>
 	            </td>
 	          </tr>
@@ -105,7 +105,7 @@
 				        <h4 class="modal-title">Add Spending</h4>
 				      </div>
 				      <div class="modal-body">
-								<form class="form-horizontal" role="form" method="get" action="/addTransaction">
+								<form id="transactionForm" class="form-horizontal" role="form" method="get" action="/addTransaction">
 									<div class="form-group">
 										<label for="nameTransaction">Transaction Name</label>
 										<div class="col-sm-10">
