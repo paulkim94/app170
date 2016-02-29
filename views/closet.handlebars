@@ -54,7 +54,7 @@
     </div>
     <div class="info-bar">
       <div class="btnContainer info">
-        <a class="btn-primary btn-undress">Get Nakey</a>
+        <a class="btn-primary btn-undress-all">Get Nakey</a>
         <a class="btn-primary" href="/shop">Shop</a>
       </div>
     </div>
@@ -65,7 +65,7 @@
   <!-- item template -->
   {{#closetItems}}
   <div class="item-wrapper">
-    <div class="container-fluid shop-item">
+    <div class="container-fluid shop-item" id="{{WearID}}">
       <h4 class="item-name">{{ItemName}}</h4>
       <p class="item-code">{{ItemCode}}</p>
       <img src="{{ItemThumbnail}}" alt="Closet Item Image" height="auto" width="100px" style="margin:auto">
@@ -76,7 +76,7 @@
     </div>
 
     <!-- view for taking off clothes -->
-      <div class="container-fluid shop-item-remove hide">
+      <div class="container-fluid shop-item-remove hide" id="{{RemoveID}}">
         <h4 class="item-name">{{ItemName}}</h4>
         <p class="item-code">{{ItemCode}}</p>
         <img src="{{ItemThumbnail}}" alt="Closet Item Image" height="auto" width="100px" style="margin:auto">
@@ -113,8 +113,16 @@ $(document).ready(function () {
     wearView.addClass("hide");
     if ($(version).text() == 'B') {
       $(pig).html("<img id ='avatar-image' src='../images/piggy-avatar-1.png' alt='Pig Avatar' width= '50%'>");
+      var wearView1 = document.getElementById("wear1");
+      var removeView1 = document.getElementById("remove1");
+      $(wearView1).removeClass("hide");
+      $(removeView1).addClass("hide");
     } else if ($(version).text() == 'C') {
       $(pig).html("<img id ='avatar-image' src='../images/piggy-avatar-2.png' alt='Pig Avatar' width= '50%'>");
+      var wearView0 = document.getElementById("wear0");
+      var removeView0 = document.getElementById("remove0");
+      $(wearView0).removeClass("hide");
+      $(removeView0).addClass("hide");
     }
     else {
       $(pig).html("<img id ='avatar-image' src='../images/piggy-avatar.png' alt='Pig Avatar' width= '50%'>");
@@ -131,6 +139,23 @@ $(document).ready(function () {
     var removeView = wrapperItem.find('.shop-item-remove');
     removeView.addClass("hide");
     wearView.removeClass("hide");
+    $(pig).html("<img id ='avatar-image' src='../images/piggy-avatar.png' alt='Pig Avatar' width= '50%'>");
+  });
+
+  $('.btn-undress-all').click(function () {
+    var pig = document.getElementById("piggy-display");
+    var wrapperItem = $(this).closest('.item-wrapper');
+    var code = wrapperItem.find('.item-code').html();
+    var version = document.getElementById("piggyVersion");
+    $(version).html(code);
+    var wearView0 = document.getElementById("wear0");
+    var removeView0 = document.getElementById("remove0");
+    $(wearView0).removeClass("hide");
+    $(removeView0).addClass("hide");
+    var wearView1 = document.getElementById("wear1");
+    var removeView1 = document.getElementById("remove1");
+    $(wearView1).removeClass("hide");
+    $(removeView1).addClass("hide");
     $(pig).html("<img id ='avatar-image' src='../images/piggy-avatar.png' alt='Pig Avatar' width= '50%'>");
   });
 });
