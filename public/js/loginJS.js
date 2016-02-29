@@ -1,4 +1,29 @@
 $(document).ready(function(){
+    $('#loginBtn').click(function(e) {
+      var userEmail = $("#email").val();
+      var userPassword = $("#password").val();
+
+      if(userEmail == "" || userPassword == "") {
+        alert("Please enter an email and password");
+      }
+      else {
+        $("#loginBtn").attr("href", "/dashboard");
+      }
+    });
+
+    $('#submitBtn').click(function(e) {
+      var userEmail = $("#email").val();
+      var userPassword = $("#password").val();
+
+      if(userEmail == "" || userPassword == "") {
+        alert("Please enter an email and password");
+        $("#loginForm").removeAttr("action"); // remove if problems occur
+      }
+      else {
+        alert('Thank you for signing up. We will take you to the setup page now');
+      }
+    });
+
     $('.modal-footer button').click(function(){
 		var button = $(this);
 
@@ -50,9 +75,3 @@ $(document).ready(function(){
 
 	});
 });
-
-
-
-
-
-    
