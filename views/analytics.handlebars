@@ -75,14 +75,60 @@
 		</div><!-- /.container-fluid -->
 	</nav>
 
-	<h2 id="headerDonutChart">Spending Breakdown</h2>
-
-    <div id="donutchart" style="width: 125%; height: 50%"></div>
+	<h2 id="headerDonutChart"></h2>
+  <div id="donutchart" style="width: 125%; height: 50%"></div>
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+	<script>
+		/* Get this month */
+		var today = new Date();
+		var mm = today.getMonth() + 1;
+		var currentMonth = "";
+
+		switch (mm) {
+			case 1:
+			currentMonth = "January";
+			break;
+			case 2:
+			currentMonth = "February";
+			break;
+			case 3:
+			currentMonth = "March";
+			break;
+			case 4:
+			currentMonth = "April";
+			break;
+			case 5:
+			currentMonth = "May";
+			break;
+			case 6:
+			currentMonth = "June";
+			break;
+			case 7:
+			currentMonth = "July";
+			break;
+			case 8:
+			currentMonth = "August";
+			break;
+			case 9:
+			currentMonth = "September";
+			break;
+			case 10:
+			currentMonth = "October";
+			break;
+			case 11:
+			currentMonth = "November";
+			break;
+			case 12:
+			currentMonth = "December";
+			break;
+		}
+
+		$("#headerDonutChart").html("Spending Breakdown for " + currentMonth);
+	</script>
   </body>
 </html>
