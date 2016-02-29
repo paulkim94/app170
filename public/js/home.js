@@ -68,6 +68,11 @@ function initializePage() {
   $("#divCircle").attr("class", "c100 p" + percentUsed + " huge green");
 
 	// Piggy Avatar Image
+	var currentCoins = localStorage.getItem("totalCoins");
+
+	$("#avatar-image").append("<h4 style='text-align: center;'>Total Coins: " + currentCoins + "</h4>");
+
+
 	if( closetAvatarImg == null ) {
 		console.log("Piggy didn't wear anything yet");
 	}
@@ -84,8 +89,10 @@ function initializePage() {
 		}
 
 		$("#avatar-image").html(htmlLine);
-		$("#avatar-image").append("<h4 style='text-align: center;'>Total Coins: 10</h4>");
+		$("#avatar-image").append("<h4 style='text-align: center;'>Total Coins: " + currentCoins + "</h4>");
 	}
+
+
 
 	// Row 3: Goal description
 	var goalTitle = localStorage.getItem("goalTitle");

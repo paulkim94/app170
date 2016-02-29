@@ -22,6 +22,7 @@ function initializePage() {
 	var goalAmount;
 	var goalDescription;
 
+
 	/* When nextButton in Step 1 is clicked */
 	$("#nextButton1").click(function(e) {
 		/* Input info from Step 1. */
@@ -60,6 +61,7 @@ function initializePage() {
 		goalAmount = $("#goalAmount").val();
 		goalName = $("#goalName").val();
 		goalDate = $("#date").val();
+
 
 		localStorage.setItem("goalTitle", goalName);
 		localStorage.setItem("goalAmnt", goalAmount);
@@ -202,6 +204,13 @@ switch (mm) {
 		$(".setup3").removeClass("hidden");
 
 	});
+
+  $("#finishButton").click(function(e){
+		console.log("Finish clicked");
+		var totalCoins = 20;
+		localStorage.setItem("totalCoins", totalCoins);
+	});
+
 
 	$("#backButton2").click(function(e) {
 		console.log("Back Clicked");

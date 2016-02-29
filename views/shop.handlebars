@@ -52,13 +52,14 @@
     <h3>Piggy Jr.</h3>
     <img id ="avatar-image" src="../images/piggy-avatar.png" alt="Pig Avatar" width= "50%">
     <div class="info-bar">
-      <div class="info"><h4>Total Coins: 10</h4></div>
+      <div class="info"><h4>Total Coins: <span id="userCoins"></span></h4></div>
       <div class="btnContainer info">
         <a class="btn-primary" href="/closet">Closet</a>
       </div>
     </div>
   </div>
 </div>
+
 
 <div class="item-section">
       <!-- item template -->
@@ -105,6 +106,8 @@
 $(document).ready(function () {
   var buyId;
 
+  $("#userCoins").html(localStorage.getItem("totalCoins"));
+
   // try on the clothes
   $('.try-button').click(function () {
     var wrapper = $(this).closest('.item-wrapper');
@@ -122,11 +125,27 @@ $(document).ready(function () {
 
   //buy the clothes
   $('.buy-button').click(function () {
+
+    var currentCoins = localStorage.getItem("totalCoins");
+    var updateCoins;
+
+    if(currentCoins == 0){
+      updatedCoins = 0;
+    }
+    else{
+      updatedCoins = currentCoins - 10;
+      $("#userCoins").html(updatedCoins);
+
+    }
+
+    localStorage.setItem("totalCoins", updatedCoins);
+
     var wrapper = $(this).closest('.item-wrapper');
 
     buyId = $(this).closest('.buy-button').attr('id');
 
     $.get("/viewStoreItems", getItem);
+
 
     console.log(buyId);
 

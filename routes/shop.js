@@ -16,10 +16,15 @@ exports.getItemBuyID = function(req, res) {
   var itemObject = req.body;
   var itemId = req.body.ItemID;
 
+
   var i;
+
+
 
   for( i = 0; i < data["storeItems"].length; i++ ) {
     if( data["storeItems"][i].ItemID == itemId ) {
+
+
       console.log("I = " + i);
       data["storeItems"].splice(i, 1);
     }
