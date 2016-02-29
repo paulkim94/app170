@@ -6,7 +6,7 @@ var editClicked; // checks whether the edit link was clicked or not
 
 var transObjEdited; // edited JSON object with updated values
 
-var totalSpent = localStorage.getItem("totalAmntSpent");
+//var totalSpent = localStorage.getItem("totalAmntSpent");
 
 /* When edit link for transaction clicked */
 $(".editLink").click(function(e) {
@@ -40,7 +40,7 @@ $("#submitBtn").click(function(e) {
     editClicked = 0;
   }
 
-  var spent = $("#amount").val();
+  /*var spent = $("#amount").val();
   var category = $("#category").val();
 
   if( totalSpent == null ) {
@@ -57,8 +57,8 @@ $("#submitBtn").click(function(e) {
   var updatedCircleValue = (indicatorCircleValue - totalSpent).toFixed(2);
 
   localStorage.setItem("totalAmntSpent", totalSpent);
-  localStorage.setItem("dailyIndicatorAmnt", updatedCircleValue);
-  localStorage.setItem("originalIndicatorAmnt", indicatorCircleValue);
+  //localStorage.setItem("dailyIndicatorAmnt", updatedCircleValue);
+  localStorage.setItem("originalIndicatorAmnt", indicatorCircleValue);*/
 });
 
 function editTrans(result) {
@@ -78,18 +78,18 @@ function editTrans(result) {
 }
 
 function deleteTrans(result) {
-  console.log("transID: " + transID );
-  console.log(result["transactions"][transID]);
+  //console.log("transID: " + transID );
+  //console.log(result["transactions"][transID]);
 
   var i;
 
   for( i = 0; i < result["transactions"].length; i++ ) {
     if(result["transactions"][i].transactionID == transID) {
-      console.log(result["transactions"][i].transactionID);
+      //console.log(result["transactions"][i].transactionID);
       $.post("/deleteTransactions", result["transactions"][i], function(res) { });
     }
   }
 
-  console.log(result["transactions"].length);
+  //console.log(result["transactions"].length);
 
 }

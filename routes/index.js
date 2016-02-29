@@ -1,16 +1,38 @@
 /*
  * GET home page.
  */
- var data = require('../transaction.json');
+var data = require('../transaction.json');
 var total = 0;
 
+var date; // stores today's date in PST
+
 exports.view = function(req, res){
-/*  for(var i=0; i < data.length; i++) {
-    var y = 0;
-    var y = data[i].amount;
-    var total += y;
+  var dailySpending = 0;
+  var today = date;
+  var i;
+
+  for(i = 0; i < data["transactions"].length; i++) {
+    if(data["transactions"][i].date == today) {
+      dailySpending += Number(data["transactions"][i].amount);
+    }
   }
 
-  window.alert(total);*/
-  res.render('index', data);
+//  console.log("Daily Spending " + dailySpending);
+
+  var spentJSON = {
+    "spentToday" : dailySpending
+  };
+
+  res.render('index', spentJSON);
+};
+
+exports.getDate = function(req, res){
+  date = req.body.date;
+  var dailySpending = 0;
+  var spentJSON = {
+    "spentToday" : dailySpending
+  };
+
+  res.render('index', spentJSON);
+  res.redirect('/dashboard');
 };

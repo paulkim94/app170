@@ -51,6 +51,9 @@ if ('development' == app.get('env')) {
 
 // Add routes here
 app.get('/', splash.view);
+
+//app.get('/getDate', index.getDate);
+app.post('/getDate', index.getDate);
 app.get('/dashboard', index.view);
 
 app.get('/dashboard2', index2.view); // redesign dashboard page

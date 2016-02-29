@@ -101,6 +101,8 @@ var dd = today.getDate();
 var mm = today.getMonth() + 1;
 var yyyy = today.getFullYear();
 
+console.log(today);
+
 /*Convert month to string*/
 var currentMonth;
 switch (mm) {
