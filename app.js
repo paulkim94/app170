@@ -63,8 +63,14 @@ app.get('/analytics', analytics.view);
 app.get('/setting', setting.view);
 app.get('/splash', splash.view);
 app.get('/aboutHelp', aboutHelp.view);
+
 app.get('/closet', closet.view);
+app.post('/closet', closet.view);
+
 app.get('/shop', shop.view);
+app.get('/viewStoreItems', shop.viewStoreItems);
+app.post('/getItemBuyID', shop.getItemBuyID);
+
 app.get('/login', login.view);
 app.get('/setup', setup.view);
 app.get('/addTransaction', transaction.addTransaction);

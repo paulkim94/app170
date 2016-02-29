@@ -147,6 +147,12 @@ switch (mm) {
 		/* Number of days remaining this month */
 		var daysRemaining = getDaysInMonth(mm, yyyy) - dd;
 
+		// Included because when it's the last day of a month, it shows that
+		// there are no more days remaining
+		if( daysRemaining == 0 ) {
+			daysRemaining = 1;
+		}
+
 		console.log(daysRemaining);
 
 		goalDescription = "GOAL: I want to save $" + goalAmount +

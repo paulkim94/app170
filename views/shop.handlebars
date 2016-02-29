@@ -101,15 +101,10 @@
 </div>
 </script>
 
-<footer class="footer">
-  <div class="container-fluid">
-    <a href="/aboutHelp">About &amp; Help</a>
-  </div>
-</footer>
-
-
 <script>
 $(document).ready(function () {
+  var buyId;
+
   // try on the clothes
   $('.try-button').click(function () {
     var wrapper = $(this).closest('.item-wrapper');
@@ -129,6 +124,12 @@ $(document).ready(function () {
   $('.buy-button').click(function () {
     var wrapper = $(this).closest('.item-wrapper');
 
+    buyId = $(this).closest('.buy-button').attr('id');
+
+    $.get("/viewStoreItems", getItem);
+
+    console.log(buyId);
+
     $('.modal').trigger('click');
 
     setTimeout(function () {
@@ -140,6 +141,24 @@ $(document).ready(function () {
     }, 500);
 
   });
+
+  function getItem(result) {
+    //console.log("transID: " + transID );
+    //console.log(result["transactions"][transID]);
+
+    var i;
+
+    for( i = 0; i < result["storeItems"].length; i++ ) {
+      if(result["storeItems"][i].BuyID == buyId) {
+        console.log(result["storeItems"][i].BuyID);
+        $.post("/getItemBuyID", result["storeItems"][i], function(res) { });
+        $.post("/closet", result["storeItems"][i], function(res) { });
+      }
+    }
+
+    //console.log(result["transactions"].length);
+
+  }
 });
 </script>
 </body>

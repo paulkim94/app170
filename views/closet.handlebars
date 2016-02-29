@@ -91,19 +91,42 @@
 </div>
 </script>
 
-<footer class="footer">
-  <div class="container-fluid">
-    <a href="/aboutHelp">About &amp; Help</a>
-  </div>
-</footer>
-
-
 <script>
 $(document).ready(function () {
+  pig = document.getElementById("piggy-display");
+  var itemWorn = localStorage.getItem("currentItemWorn");
+
+  if(itemWorn == null) {
+    console.log("No item worn");
+  }
+  else {
+    console.log(JSON.parse(itemWorn));
+    var itemWornJSON = JSON.parse(itemWorn);
+    $(pig).html(itemWornJSON.imgWorn);
+
+    if(itemWornJSON.itemID == "item0") {
+      console.log("Item0 Worn");
+
+      var wearView0 = document.getElementById("wear0");
+      var removeView0 = document.getElementById("remove0");
+      $(wearView0).addClass("hide");
+      $(removeView0).removeClass("hide");
+    }
+    else {
+      console.log("Item1 Worn");
+
+      var wearView1 = document.getElementById("wear1");
+      var removeView1 = document.getElementById("remove1");
+      $(wearView1).addClass("hide");
+      $(removeView1).removeClass("hide");
+    }
+  }
+
   //wear the clothes
   $('.wear-button').click(function () {
-    var pig = document.getElementById("piggy-display");
+    //var pig = document.getElementById("piggy-display");
     var wrapperItem = $(this).closest('.item-wrapper');
+    console.log("wrapper" + wrapperItem);
     var code = wrapperItem.find('.item-code').html();
     var version = document.getElementById("piggyVersion");
     $(version).html(code);
@@ -113,12 +136,18 @@ $(document).ready(function () {
     wearView.addClass("hide");
     if ($(version).text() == 'B') {
       $(pig).html("<img id ='avatar-image' src='../images/piggy-avatar-1.png' alt='Pig Avatar' width= '50%'>");
+      var status = {"itemID" : "item0", "imgWorn" : "<img id ='avatar-image' src='../images/piggy-avatar-1.png' alt='Pig Avatar' width= '50%'>"};
+
+      localStorage.setItem("currentItemWorn", JSON.stringify(status));
       var wearView1 = document.getElementById("wear1");
       var removeView1 = document.getElementById("remove1");
       $(wearView1).removeClass("hide");
       $(removeView1).addClass("hide");
     } else if ($(version).text() == 'C') {
       $(pig).html("<img id ='avatar-image' src='../images/piggy-avatar-2.png' alt='Pig Avatar' width= '50%'>");
+      var status = {"itemID" : "item1", "imgWorn" : "<img id ='avatar-image' src='../images/piggy-avatar-2.png' alt='Pig Avatar' width= '50%'>"};
+
+      localStorage.setItem("currentItemWorn", JSON.stringify(status));
       var wearView0 = document.getElementById("wear0");
       var removeView0 = document.getElementById("remove0");
       $(wearView0).removeClass("hide");
@@ -140,6 +169,7 @@ $(document).ready(function () {
     removeView.addClass("hide");
     wearView.removeClass("hide");
     $(pig).html("<img id ='avatar-image' src='../images/piggy-avatar.png' alt='Pig Avatar' width= '50%'>");
+    localStorage.removeItem("currentItemWorn");
   });
 
   $('.btn-undress-all').click(function () {
@@ -157,6 +187,7 @@ $(document).ready(function () {
     $(wearView1).removeClass("hide");
     $(removeView1).addClass("hide");
     $(pig).html("<img id ='avatar-image' src='../images/piggy-avatar.png' alt='Pig Avatar' width= '50%'>");
+    localStorage.removeItem("currentItemWorn");
   });
 });
 </script>

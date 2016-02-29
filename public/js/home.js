@@ -1,6 +1,6 @@
 //var weeklyAmnt = localStorage.getItem("weeklyIndicatorAmnt");
 var dailyAmnt = localStorage.getItem("dailyIndicatorAmnt"); // daily budget
-
+var closetAvatarImg = localStorage.getItem("currentItemWorn");
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
@@ -66,6 +66,26 @@ function initializePage() {
 	$("#weeklyIndicatorNum").html("$" + todayLimit);
 
   $("#divCircle").attr("class", "c100 p" + percentUsed + " huge green");
+
+	// Piggy Avatar Image
+	if( closetAvatarImg == null ) {
+		console.log("Piggy didn't wear anything yet");
+	}
+	else {
+		var closetAvatarJSON = JSON.parse(closetAvatarImg);
+		console.log(closetAvatarJSON.itemID);
+		console.log(closetAvatarJSON.imgWorn);
+
+		if(closetAvatarJSON.itemID == "item0") {
+			var htmlLine = "<img src='../images/piggy-avatar-1.png' alt='Pig Avatar' height='60%' width='60%' style='display: block; margin: auto; padding-top: 10px'>";
+		}
+		else {
+			var htmlLine = "<img src='../images/piggy-avatar-2.png' alt='Pig Avatar' height='60%' width='60%' style='display: block; margin: auto; padding-top: 10px'>";
+		}
+
+		$("#avatar-image").html(htmlLine);
+		$("#avatar-image").append("<h4 style='text-align: center;'>Total Coins: 10</h4>");
+	}
 
 	// Row 3: Goal description
 	var goalTitle = localStorage.getItem("goalTitle");
