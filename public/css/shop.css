@@ -18,9 +18,9 @@ html, body {
   border-width: thin;
   border-style: solid;
   border-radius: 20px;
-  display: inline-block;
+  display: block;
   text-align: center;
-  margin: 2%;
+  margin: 5% 10% 5% 10%;
   padding-bottom: 2%;
   padding-top: 2%;
 }

@@ -81,19 +81,19 @@ function initializePage() {
 			return;
 		}
 
-$(".setup2").addClass("hidden");
-$(".setup3").removeClass("hidden");
+		$(".setup2").addClass("hidden");
+		$(".setup3").removeClass("hidden");
 
-/* To be added on summary portion of setup */
+		/* To be added on summary portion of setup */
 
-goalDescription = "GOAL: I want to save $" + goalAmount +
-" for a " + goalName + " by " + goalDate + ".";
+		goalDescription = "GOAL: I want to save $" + goalAmount +
+		" for a " + goalName + " by " + goalDate + ".";
 
-$("#goalDescription").html(goalDescription);
-/* Returns number of days in any month */
-var getDaysInMonth = function(month, year) {
-	return new Date(year, month, 0).getDate();
-}
+		$("#goalDescription").html(goalDescription);
+		/* Returns number of days in any month */
+		var getDaysInMonth = function(month, year) {
+			return new Date(year, month, 0).getDate();
+		}
 
 /* Actual date */
 var today = new Date();
@@ -144,79 +144,85 @@ switch (mm) {
 	break;
 }
 
-/* Number of days remaining this month */
-var daysRemaining = getDaysInMonth(mm, yyyy) - dd;
+		/* Number of days remaining this month */
+		var daysRemaining = getDaysInMonth(mm, yyyy) - dd;
 
-console.log(daysRemaining);
+		console.log(daysRemaining);
 
-goalDescription = "GOAL: I want to save $" + goalAmount +
-		" for a " + goalName + " by " + goalDate + ".";
+		goalDescription = "GOAL: I want to save $" + goalAmount +
+		" for " + goalName + " by " + goalDate + ".";
 
-$(".goalDescription").html(goalDescription);
+		$(".goalDescription").html(goalDescription);
 
-/* The date to save up by */
-var dateGoal = new Date(goalDate);
-var goalDateDay = dateGoal.getDate();
-var goalDateMonth = dateGoal.getMonth() + 1;
-console.log(goalDateDay);
+		/* The date to save up by */
+		var dateGoal = new Date(goalDate);
+		var goalDateDay = dateGoal.getDate();
+		var goalDateMonth = dateGoal.getMonth() + 1;
+		console.log(goalDateDay);
 
-// The monthly available budget
-var monthlyBudget = monthlyIncome - necessities - spentSoFar;
+		// The monthly available budget
+		var monthlyBudget = monthlyIncome - necessities - spentSoFar;
 
-var monthlyIncomeDescription = "MONTHLY INCOME: $" + monthlyIncome + " per month";
+		var monthlyIncomeDescription = "MONTHLY INCOME: $" + monthlyIncome + " per month";
 
-var budgetDescription = "MONTHLY SPENDING ALLOWANCE: After paying for necessities, I have $" +
-monthlyBudget + " left to spend each month.";
+		var budgetDescription = "MONTHLY SPENDING ALLOWANCE: After paying for necessities, I have $" +
+		monthlyBudget + " left to spend each month.";
 
-var oneDay = 24 * 60 * 60 * 1000;
-var diffDays = Math.round(Math.abs((dateGoal.getTime() - today.getTime())/(oneDay)));
+		var oneDay = 24 * 60 * 60 * 1000;
+		var diffDays = Math.round(Math.abs((dateGoal.getTime() - today.getTime())/(oneDay)));
 
-localStorage.setItem("daysLeft", diffDays);
-console.log(diffDays);
+		localStorage.setItem("daysLeft", diffDays);
+		console.log(diffDays);
 
-var savingsDescription = "After this month, you need to save $" +
-(goalAmount / diffDays).toFixed(2) +
-" every day for the next " + (diffDays - daysRemaining) + " days. Then, you'll reach your goal!";
+		var savingsDescription = "After this month, you need to save $" +
+		(goalAmount / diffDays).toFixed(2) +
+		" every day for the next " + (diffDays - daysRemaining) + " days. Then, you'll reach your goal!";
 
-var newBudgetDescription = "For the rest of " + currentMonth + ", the maximum you should spend per day is $" +
-((monthlyBudget / daysRemaining) - (goalAmount / diffDays)).toFixed(2) +
-".";
+		var newBudgetDescription = "For the rest of " + currentMonth + ", the maximum you should spend per day is $" +
+		((monthlyBudget / daysRemaining) - (goalAmount / diffDays)).toFixed(2) +
+		".";
 
-//localStorage.setItem("weeklyIndicatorAmnt", (((monthlyBudget / 28) - (goalAmount / diffDays)).toFixed(2) * 7).toFixed(2) )
-localStorage.setItem("dailyIndicatorAmnt", ((monthlyBudget / daysRemaining) - (goalAmount / diffDays)).toFixed(2) );
+		//localStorage.setItem("weeklyIndicatorAmnt", (((monthlyBudget / 28) - (goalAmount / diffDays)).toFixed(2) * 7).toFixed(2) )
+		localStorage.setItem("dailyIndicatorAmnt", ((monthlyBudget / daysRemaining) - (goalAmount / diffDays)).toFixed(2) );
 
-$(".monthlyDescription").html(monthlyIncomeDescription);
-$(".savingsDescription").html(savingsDescription);
-$(".monthlyBudget").html(budgetDescription);
+		$(".monthlyDescription").html(monthlyIncomeDescription);
+		$(".savingsDescription").html(savingsDescription);
+		$(".monthlyBudget").html(budgetDescription);
 
-$(".savingsGuide").html(savingsDescription);
-$(".newBudget").html(newBudgetDescription);
+		$(".savingsGuide").html(savingsDescription);
+		$(".newBudget").html(newBudgetDescription);
 
-$(".setup2").addClass("hidden");
-$(".setup3").removeClass("hidden");
+		$(".setup2").addClass("hidden");
+		$(".setup3").removeClass("hidden");
 
-});
+	});
 
-$("#backButton2").click(function(e) {
-	console.log("Back Clicked");
-	$(".setup2").addClass("hidden");
-	$(".setup1").removeClass("hidden");
-});
+	$("#backButton2").click(function(e) {
+		console.log("Back Clicked");
+		$(".setup2").addClass("hidden");
+		$(".setup1").removeClass("hidden");
+	});
 
-$("#confirm").click(function(e) {
-	$(".setup3").addClass("hidden");
-	$(".setup4").removeClass("hidden");
-});
+	$("#nextButton3").click(function(e) {
+		$(".setup3").addClass("hidden");
+		$(".setup4").removeClass("hidden");
+	});
 
-$("#nextButton").click(function(e) {
-	console.log("Next Clicked");
-	$(".setup3").addClass("hidden");
-	$(".setup4").removeClass("hidden");
-});
+	$("#backButton3").click(function(e) {
+		console.log("Back Clicked");
+		$(".setup3").addClass("hidden");
+		$(".setup2").removeClass("hidden");
+	});
 
-$("#backButton3").click(function(e) {
-	console.log("Back Clicked");
-	$(".setup3").addClass("hidden");
-	$(".setup2").removeClass("hidden");
-});
+	$("#nextButton4").click(function(e) {
+		console.log("Next Clicked");
+		$(".setup4").addClass("hidden");
+		$(".setup5").removeClass("hidden");
+	});
+
+	$("#backButton4").click(function(e) {
+		console.log("Back Clicked");
+		$(".setup4").addClass("hidden");
+		$(".setup3").removeClass("hidden");
+	});
 }
