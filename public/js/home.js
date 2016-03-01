@@ -5,29 +5,23 @@ var closetAvatarImg = localStorage.getItem("currentItemWorn");
 $(document).ready(function() {
 	initializePage();
 	updateProgressBar();
+
+	$("#editGoal").click(function(e) {
+		var result = confirm("Editing the goal will take you back to the setup page.");
+		if( result == true ) {
+			localStorage.clear();
+			window.location.href = "/setup";
+		}
+	});
+
+	$("#deleteGoal").click(function(e) {
+		var result = confirm("Are you sure you want to delete this goal? You will be sent back to the setup page to set a new goal.");
+		if( result == true ) {
+			localStorage.clear();
+			window.location.href = "/setup";
+		}
+	});
 })
-
-/*$("#submitBtn").click(function(e) {
-  var spent = $("#amount").val();
-  var category = $("#category").val();
-
-  if( totalSpent == null ) {
-    totalSpent = spent;
-  }
-  else {
-    var totalSum = Number(totalSpent) + Number(spent);
-    console.log(totalSum);
-    totalSpent = totalSum;
-  }
-
-  var indicatorCircleValue = localStorage.getItem("dailyIndicatorAmnt");
-
-  var updatedCircleValue = (indicatorCircleValue - totalSpent).toFixed(2);
-
-  localStorage.setItem("totalAmntSpent", totalSpent);
-  //localStorage.setItem("dailyIndicatorAmnt", updatedCircleValue);
-  localStorage.setItem("originalIndicatorAmnt", indicatorCircleValue);
-});*/
 
 /*
  * Function that is called when the document is ready.
@@ -113,3 +107,12 @@ function updateProgressBar() {
   $("#goalProgress").attr("style", "width: 0%");
   $("#savedDescription").html("$0 / " + goalAmnt + " saved");
 }
+
+/*function deleteGoal() {
+	var result = confirm("Are you sure you want to delete this goal? You will be directed to the setup page to set a new goal")''
+
+	if( result ) {
+		localStorage.clear();
+		window.href.location = "/setup";
+	}
+}*/
