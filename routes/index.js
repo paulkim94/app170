@@ -11,13 +11,17 @@ exports.view = function(req, res){
   var today = date;
   var i;
 
+  console.log(today);
+
   for(i = 0; i < data["transactions"].length; i++) {
+    console.log(data["transactions"][i].date);
+
     if(data["transactions"][i].date == today) {
       dailySpending += Number(data["transactions"][i].amount);
     }
   }
 
-//  console.log("Daily Spending " + dailySpending);
+  console.log("Daily Spending " + dailySpending);
 
   var spentJSON = {
     "spentToday" : dailySpending

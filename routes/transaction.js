@@ -3,6 +3,7 @@
  */
 
 var data = require("../transaction.json");
+var designData = require("../design.json");
 var id = 0;
 
 exports.view = function(req, res){

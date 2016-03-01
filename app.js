@@ -56,7 +56,9 @@ app.get('/', splash.view);
 app.post('/getDate', index.getDate);
 app.get('/dashboard', index.view);
 
+app.post('/getDate2', index2.getDate2);
 app.get('/dashboard2', index2.view); // redesign dashboard page
+//app.get('/design', index2.getDesign);
 
 app.get('/transaction', transaction.view);
 app.get('/analytics', analytics.view);
