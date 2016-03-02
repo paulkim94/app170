@@ -17,12 +17,24 @@
 
 		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui.min.css">
+		<script src="jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+		<script src="jquery-ui-1.11.4.custom/jquery-ui.js"></script>
+		<script src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
+		<script>
+			$(function() {
+				$("#date").datepicker();
+			});
+		</script>
 	</head>
 	<body>
 		<!--{{transactions.[0].amount}}-->
@@ -57,10 +69,21 @@
 			</div><!-- /.container-fluid -->
 		</nav>
 
-    <div class="container-fluid">
+		<div class="container-fluid" style="margin: 0 auto">
+			<a href="#indicatorDiv">Indicator</a>
+			<a href="#piggyDiv">Piggy</a>
+			<a href="#progressDiv">Progress</a>
+		</div>
+
+		<div class="container-fluid">
 			<!-- Weekly indicator description -->
-			<div class="row">
-				<h4 id="weeklyIndicatorDescription" style="text-align: center"></h4>
+			<div class="row" id="indicatorDiv">
+
+				<h4 id="weeklyIndicatorDescription" style="text-align: center">
+					TODAY: <span id="today"></span><br>
+					CURRENTLY SPENT: $ <span id="spentDay">{{spentToday}}</span> <br>
+					DAILY SPENDING LIMIT: $ <span id="dailyLimit"></span>
+				</h4>
 			</div>
 			<!-- End of weekly indicator description -->
 
@@ -78,19 +101,19 @@
 				<div class="btnContainer">
 					<a class="btn-primary" href="#" data-toggle="modal" data-target="#myModal">+ Add Spending</a>
           <br><br><br>
-          <a class="btn-primary" id="piggy" href="/piggy">Check out Piggy Jr.</a>
+          <!--<a class="btn-primary" id="piggy" href="/piggy">Check out Piggy Jr.</a>-->
 
 					<!-- Modal -->
 					<div class="modal fade" id="myModal" role="dialog">
-						<div class="modal-dialog">
+					  <div class="modal-dialog">
 
-							<!-- Modal content-->
-							<div class="modal-content">
-								<div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal">&times;</button>
-									<h4 class="modal-title">Add Spending</h4>
-								</div>
-								<div class="modal-body">
+					    <!-- Modal content-->
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <button type="button" class="close" data-dismiss="modal">&times;</button>
+					        <h4 class="modal-title">Add Spending</h4>
+					      </div>
+					      <div class="modal-body">
 									<form class="form-horizontal" role="form" method="get" action="/addTransaction">
 										<div class="form-group">
 											<label for="nameTransaction">Transaction Name</label>
@@ -113,62 +136,66 @@
 												id="date" placeholder="Ex. 02/15/2016" name="date"/>
 											</div>
 										</div>
-										​<div class="form-group">
-											<label for="category">Category</label>
+										<div class="form-group">
+											<label for "category"> Category </label>
 											<div class="col-sm-10">
-												<input type="text" class="form-control"
-												id="category" placeholder="Ex. Rent"/ name="category">
-											</div>
-											<!--<div class="col-sm-10">
-												<select class="form-control">
-														<option>Rent</option>
-														<option>Utilities</option>
-														<option>Groceries</option>
-														<option>Other</option>
+												<select class="form-control" id="category" name="category">
+												    <option>Meals/Drinks</option>
+												    <option>Necessities</option>
+														<option>Entertainment</option>
+														<option>Transportation</option>
+														<option>Personal Care </option>
 												</select>
-											</div>-->
 										</div>
+										<br>
 										<input type="submit" id="submitBtn" class="btn btn-default" value="Add Transaction" onclick="alert('New transaction has been added');"></input>
 									</form>
 									<!-- This is where the modal form ends !-->
-
 								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-								</div>
-							</div>
 
-						</div>
+					    </div>
+					      <div class="modal-footer">
+					        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					      </div>
+					    </div>
+
+					  </div>
 					</div>
 				</div>
      	</div>
     	<hr>
+			<div class="row" id="piggyDiv">
+						<h2 style="text-align: center;">Piggy Jr.</h2>
+				<div id ="avatar-image">
+					<img src="images/piggy-avatar.png" alt="Pig Avatar" height="60%" width="60%" style="display: block; margin: auto; padding-top: 10px">
+					<!--<h4 style="text-align: center;">Total Coins: 10</h4>!-->
+				</div>
+				<br>
+				<div class="buttons">
+					<a class="btn-primary" href="/closet">Closet</a>
+					<a class="btn-primary" href="/shop">Shop</a>
+				</div>
+			</div>
 
-    	<div class="row" id="goalInfo">
+
+			<div class="row" id="progressDiv">
 						<h3 id="daysLeft" style="text-align: center"></h3>
 						<h3 id="goalName" style="text-align: center;"></h3>
 
 						<div style="font-size: 16px; text-align: center">
-							<a href="#">Edit goal</a> |
-							<a href="#">Delete goal</a>
+							<a id="editGoal" href="#">Edit goal</a> |
+							<a id="deleteGoal" href="#">Delete goal</a>
 						</div>
 
 						<div class="progress" style="width: 50%; margin: 0 auto">
-							<!--<p>$ 0 / $500 saved</p>-->
 							<div id="goalProgress" class="progress-bar" role="progressbar" aria-valuenow="0"
-							aria-valuemin="0" aria-valuemax="" style="width: 60%">
+							aria-valuemin="0" aria-valuemax="" style="width: 0%">
 							</div>
 						</div>
 						<p id="savedDescription" style="text-align: center; margin-top: 5px"></p>
-
-						<br>
       </div>
 		</div>
 
-		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<!-- Include all compiled plugins (below), or include individual files as needed -->
-		<script src="/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
 		<script src="js/home.js"></script>
 	</body>
 </html>

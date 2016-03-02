@@ -36,6 +36,10 @@ function initializePage() {
   var yyyy = today.getFullYear();
   var date;
 
+	if( dd < 10 ) {
+		dd = "0" + dd;
+	}
+
   if( mm < 10 ) {
     date = "0" + mm + "/" + dd + "/" + yyyy;
   }
@@ -52,6 +56,7 @@ function initializePage() {
 
 	// Sends today's date to index.js route
   $.post("/getDate", dateJSON, function(res) { });
+	$.post("/getDate2", dateJSON, function(res) { });
 
   var percentUsed = (spentToday / dailyAmnt).toFixed(2) * 100;
 
