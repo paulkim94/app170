@@ -56,7 +56,6 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li><a href="/dashboard">Dashboard</a></li>
-            <li><a href="/piggy">Piggy Jr.</a></li>
 						<li><a href="/transaction">Transactions</a></li>
 						<li><a href="/analytics">Analytics</a></li>
 					</ul>
@@ -70,9 +69,10 @@
 			</div><!-- /.container-fluid -->
 		</nav>
 
-		<div class="container-fluid" style="margin: 0 auto">
-			<a href="#indicatorDiv">Indicator</a>
-			<a href="#piggyDiv">Piggy</a>
+		<!--<p style="text-align: center; margin: 0; font-weight: bold">Click link to go to that section of this page</p>-->
+		<div class="container-fluid" style="text-align: center; margin-top: 5px; font-weight: bold; position">
+			<a href="#indicatorDiv">Indicator</a> |
+			<a href="#piggyDiv">Piggy</a> |
 			<a href="#progressDiv">Progress</a>
 		</div>
 
@@ -88,7 +88,7 @@
 			</div>
 			<!-- End of weekly indicator description -->
 
-    	<div class="row">
+    	<div class="row" style="height: 475px">
     		<div class="indicatorContainer">
 					<div id="divCircle" class="c100 p0 big green">
 						<span id="weeklyIndicatorNum"></span>
@@ -165,21 +165,21 @@
 				</div>
      	</div>
     	<hr>
-			<div class="row" id="piggyDiv">
-						<h2 style="text-align: center;">Piggy Jr.</h2>
+			<div class="row" id="piggyDiv" style="height: 375px">
+				<h2 style="text-align: center;">Piggy Jr.</h2>
 				<div id ="avatar-image">
 					<img src="images/piggy-avatar.png" alt="Pig Avatar" height="60%" width="60%" style="display: block; margin: auto; padding-top: 10px">
 					<!--<h4 style="text-align: center;">Total Coins: 10</h4>!-->
 				</div>
 				<br>
 				<div class="buttons">
-					<a class="btn-primary" id="closetBtn" href="/closet">Closet</a>
-					<a class="btn-primary" id="closetBtn" href="/shop">Shop</a>
+					<a class="btn-primary" id="piggyRowButtons" href="/closet">Closet</a>
+					<a class="btn-primary" id="piggyRowButtons" href="/shop">Shop</a>
 				</div>
 			</div>
+			<hr>
 
-
-			<div class="row" id="progressDiv">
+			<div class="row" id="progressDiv" style="height: 200px">
 						<h3 id="daysLeft" style="text-align: center"></h3>
 						<h3 id="goalName" style="text-align: center;"></h3>
 
