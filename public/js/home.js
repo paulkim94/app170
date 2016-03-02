@@ -6,18 +6,11 @@ $(document).ready(function() {
 	initializePage();
 	updateProgressBar();
 
-	$("#closetBtn").click(function(e) {
+	$("#piggyRowButtons").click(function(e) {
 		//prevent the page from reloading
 		e.preventDefault();
 
-		ga("send", "event", 'closet', 'click');
-	});
-
-	$("#shopBtn").click(function(e) {
-		//prevent the page from reloading
-		e.preventDefault();
-
-		ga("send", "event", 'shop', 'click');
+		ga("send", "event", 'shopCloset', 'click');
 	});
 
 	$("#editGoal").click(function(e) {
