@@ -6,6 +6,20 @@ $(document).ready(function() {
 	initializePage();
 	updateProgressBar();
 
+	$("#closetBtn").click(function(e) {
+		//prevent the page from reloading
+		e.preventDefault();
+
+		ga("send", "event", 'closet', 'click');
+	});
+
+	$("#shopBtn").click(function(e) {
+		//prevent the page from reloading
+		e.preventDefault();
+
+		ga("send", "event", 'shop', 'click');
+	});
+
 	$("#editGoal").click(function(e) {
 		var result = confirm("Editing the goal will take you back to the setup page.");
 		if( result == true ) {
