@@ -6,12 +6,21 @@ $(document).ready(function() {
 	initializePage();
 	updateProgressBar();
 
-	$("#piggyRowButtons").click(function(e) {
+	$("#shopBtn").click(function(e) {
 		//prevent the page from reloading
-		e.preventDefault();
+		//e.preventDefault();
 
 		ga("send", "event", 'shopCloset', 'click');
 	});
+
+	$("#closetBtn").click(function(e) {
+		//prevent the page from reloading
+
+		//e.preventDefault();
+
+		ga("send", "event", 'shopCloset', 'click');
+	});
+
 
 	$("#editGoal").click(function(e) {
 		var result = confirm("Editing the goal will take you back to the setup page.");
