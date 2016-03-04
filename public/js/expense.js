@@ -42,7 +42,6 @@ $("#submitBtn").click(function(e) {
 
   /*var spent = $("#amount").val();
   var category = $("#category").val();
-
   if( totalSpent == null ) {
     totalSpent = spent;
   }
@@ -51,11 +50,8 @@ $("#submitBtn").click(function(e) {
     console.log(totalSum);
     totalSpent = totalSum;
   }
-
   var indicatorCircleValue = Number(localStorage.getItem("dailyIndicatorAmnt"));
-
   var updatedCircleValue = (indicatorCircleValue - totalSpent).toFixed(2);
-
   localStorage.setItem("totalAmntSpent", totalSpent);
   //localStorage.setItem("dailyIndicatorAmnt", updatedCircleValue);
   localStorage.setItem("originalIndicatorAmnt", indicatorCircleValue);*/

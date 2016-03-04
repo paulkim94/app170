@@ -40,8 +40,8 @@
 		<link href="bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/analytics.css" rel="stylesheet">
 		<link href="css/common.css" rel="stylesheet">
-		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 
+		<link href='https://fonts.googleapis.com/css?family=Montserrat|Open+Sans:400,700' rel='stylesheet' type='text/css'>
  	</head>
   <body>
 
@@ -56,7 +56,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">PIGGY</a>
+				<a class="navbar-brand" href="#">Piggy</a>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -75,9 +75,9 @@
 		</div><!-- /.container-fluid -->
 	</nav>
 
-	<h2 id="headerDonutChart"></h2>
+<section>
+	<h3 class="section-header"	 id="headerDonutChart"></h3>
   <div id="donutchart" style="width: 125%; height: 50%"></div>
-
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -128,7 +128,8 @@
 			break;
 		}
 
-		$("#headerDonutChart").html("Spending Breakdown for " + currentMonth);
+		$("#headerDonutChart").html("Spending per Category for " + currentMonth);
 	</script>
+</section>
   </body>
 </html>

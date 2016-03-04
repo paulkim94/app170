@@ -1,3 +1,41 @@
 #myModal{
 margin : 0 auto;
 }
+
+#myModal .modal-body {
+    max-height: 450px;
+    height: 400px;
+}
+
+/* CSS for transactions table */
+#table-design {
+	margin-top: 1%;
+	margin-bottom: 1%;
+	margin-right: auto;
+	margin-left: auto;
+	width: 60%;
+}
+
+#table-design tbody {
+  /* Kind of irrelevant unless your .css is alreadt doing something else */
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+}
+
+#table-design td {
+  padding: 3px 10px;
+
+}
+
+table #editDeleteTransaction > a {
+  font-weight: bold;
+}
+
+td {
+  text-align: left;
+  word-wrap: break-word;
+  word-break: break-all;
+}

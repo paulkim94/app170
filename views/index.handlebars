@@ -12,8 +12,8 @@
 	<link href="/bootstrap-3.3.6-dist/css/bootstrap.css" rel="stylesheet">
 	<link href="/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/circle.css" rel="stylesheet">
-	<link href="/css/home.css" rel="stylesheet">
 	<link href="/css/common.css" rel="stylesheet">
+	<link href="/css/home.css" rel="stylesheet">
 
 	<link href='https://fonts.googleapis.com/css?family=Montserrat|Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
@@ -70,11 +70,11 @@
 		</div><!-- /.container-fluid -->
 	</nav>
 
-	<div class="container-fluid">
 		<!-- Weekly indicator description -->
 		<section>
 			<div class="row">
-				<h3 class="colorNavy"><b>$<span id="remainingAmt"></span> Remaining Today</b></h3>
+				<br>
+				<h3 class="colorNavy"><b>$<span id="remainingAmt"></span></b> Remaining Today</h3>
 				<h4 id="weeklyIndicatorDescription">
 					<b>$<span id="spentDay">{{spentToday}}</span></b> Spent
 					| <b>$<span id="budgetDay"></span></b> Daily Budget
@@ -93,6 +93,7 @@
 						</div>
 					</div>
 				</div>
+				</div>
 
 				<div class="btnContainer">
 					<a class="btn-primary" href="#" data-toggle="modal" data-target="#myModal">+ Add Spending</a>
@@ -105,7 +106,7 @@
 							<div class="modal-content">
 								<div class="modal-header">
 									<button type="button" class="close" data-dismiss="modal">&times;</button>
-									<h4 class="modal-title">Add Spending</h4>
+									<h4 class="modal-title">Add Transaction</h4>
 								</div>
 								<div class="modal-body">
 									<form class="form-horizontal" role="form" method="get" action="/addTransaction">
@@ -157,12 +158,11 @@
 					</div>
 				</div>
 				<br>
-			</div>
 		</section>
 
 		<section>
 			<div class="row">
-				<h2 class="section-header">Piggy Jr.</h2>
+				<h3 class="section-header">Piggy Jr.</h3>
 				<div id ="avatar-image">
 					<img src="images/piggy-avatar.png" alt="Pig Avatar" height="60%" width="60%" style="display: block; margin: auto; padding-top: 10px">
 				</div>
@@ -200,9 +200,7 @@
 
 		</div>
 </section>
-	</div>
 
-</div>
 <script src="js/home.js"></script>
 {{> googleAnalytics}}
 </body>
