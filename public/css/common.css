@@ -3,14 +3,80 @@ html, body {
   width: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Roboto';
+  font-family: 'Open Sans', sans-serif;;
+  background-color: #EAEBEC;
+}
+
+section {
+  background-color: #fff;
+  border: 1px solid #DBDCDD;
+  border-radius: 5px;
+  margin-top: 5%;
+  text-align: center;
+}
+
+.section-last {
+  margin-bottom: 5%;
+}
+
+.section-header {
+  font-family: 'Montserrat', sans-serif;
+  color: #0064C8;
 }
 
 /* Customize Bootstrap */
 .navbar {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #0064C8;
+  color: #fff;
   position: relative;
   min-height: 50px;
   margin-bottom: 0;
   border: 1px solid transparent;
-  background-color: #e0e0e0;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+.navbar-default .navbar-brand {
+  color: #fff;
+}
+
+.nav.navbar-nav li a {
+  color: #fff;
+}
+
+.btnContainer {
+  padding: 20px 30px;
+  text-align: center;
+}
+
+.nav.navbar-nav li a:hover {
+  color: #00BED0;
+}
+
+.navbar-toggle.collapsed {
+  border: none;
+}
+
+.navbar-toggle.collapsed:hover{
+  background-color: #0064C8;
+}
+
+.btn-primary {
+  background-color: #F62F63;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 1.3px;
+  text-decoration: none;
+  padding: 15px 20px;
+  border-radius: 10px;
+}
+
+.btn-primary:hover {
+  background-color: #9e005d;
+  text-decoration: none;
 }

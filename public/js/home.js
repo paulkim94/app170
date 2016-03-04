@@ -68,7 +68,9 @@ function initializePage() {
 
 	var spentToday = Number($("#spentDay").html());
 	var todayLimit = (Number(dailyAmnt) - spentToday).toFixed(2);
-	$("#dailyLimit").html(todayLimit);
+	$("#budgetDay").html(dailyAmnt);
+	$("#remainingAmt").html(todayLimit);
+
 
 	// Sends today's date to index.js route
   $.post("/getDate", dateJSON, function(res) { });
@@ -85,7 +87,7 @@ function initializePage() {
 	// Piggy Avatar Image
 	var currentCoins = localStorage.getItem("totalCoins");
 
-	$("#avatar-image").append("<h4 style='text-align: center;'>Total Coins: " + currentCoins + "</h4>");
+	$("#coinsAmt").html(currentCoins);
 
 
 	if( closetAvatarImg == null ) {
@@ -126,7 +128,7 @@ function updateProgressBar() {
   $("#goalProgress").attr("aria-valuenow", "0");
   $("#goalProgress").attr("aria-valuemax", "'" + goalAmnt + "''");
   $("#goalProgress").attr("style", "width: 0%");
-  $("#savedDescription").html("$0 / " + goalAmnt + " saved");
+  $("#savedDescription").html(goalAmnt);
 }
 
 /*function deleteGoal() {

@@ -1,113 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		{{> closetClick}}
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-		<title>Bootstrap Piggy Homescreen</title>
+<head>
+	{{> closetClick}}
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>Bootstrap Piggy Homescreen</title>
 
-		<!-- Bootstrap -->
-		<link href="/bootstrap-3.3.6-dist/css/bootstrap.css" rel="stylesheet">
-		<link href="/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
-		<link href="/css/indexCSS.css" rel="stylesheet">
-		<link href="/css/circle.css" rel="stylesheet">
-		<link href="/css/home.css" rel="stylesheet">
-		<link href="/css/common.css" rel="stylesheet">
+	<!-- Bootstrap -->
+	<link href="/bootstrap-3.3.6-dist/css/bootstrap.css" rel="stylesheet">
+	<link href="/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/circle.css" rel="stylesheet">
+	<link href="/css/home.css" rel="stylesheet">
+	<link href="/css/common.css" rel="stylesheet">
 
-		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat|Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
 
-		<link rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui.min.css">
-		<script src="jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
-		<script src="jquery-ui-1.11.4.custom/jquery-ui.js"></script>
-		<script src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui.min.css">
+	<script src="jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+	<script src="jquery-ui-1.11.4.custom/jquery-ui.js"></script>
+	<script src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
 
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
-		<script>
-			$(function() {
-				$("#date").datepicker();
-			});
-		</script>
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	<script>
+	$(function() {
+		$("#date").datepicker();
+	});
+	</script>
 
-	</head>
-	<body>
+</head>
+<body>
 
-		<nav class="navbar navbar-default">
-			<div class="container-fluid">
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
 			<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="#">PIGGY</a>
-				</div>
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">
-						<li><a href="/dashboard">Dashboard</a></li>
-						<li><a href="/transaction">Transactions</a></li>
-						<li><a href="/analytics">Analytics</a></li>
-					</ul>
-					<!-- code for the right side of the navbar -->
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="/aboutHelp">About &amp; Help</a></li>
-						<li><a href="/setting">Settings</a> </li>
-						<li><a href="/splash">Logout</a> </li>
-					</ul>
-				</div><!-- /.navbar-collapse -->
-			</div><!-- /.container-fluid -->
-		</nav>
+				</button>
+				<a class="navbar-brand" href="#">Piggy</a>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a href="/dashboard">Dashboard</a></li>
+					<li><a href="/transaction">Transactions</a></li>
+					<li><a href="/analytics">Analytics</a></li>
+				</ul>
+				<!-- code for the right side of the navbar -->
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/aboutHelp">About &amp; Help</a></li>
+					<li><a href="/setting">Settings</a> </li>
+					<li><a href="/splash">Logout</a> </li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
 
-    <div class="container-fluid">
-			<!-- Weekly indicator description -->
+	<div class="container-fluid">
+		<!-- Weekly indicator description -->
+		<section>
 			<div class="row">
-
-				<h4 id="weeklyIndicatorDescription" style="text-align: center">
-					TODAY: <span id="today"></span><br>
-					CURRENTLY SPENT: $ <span id="spentDay">{{spentToday}}</span> <br>
-					DAILY SPENDING LIMIT: $ <span id="dailyLimit"></span>
+				<h3 class="colorNavy"><b>$<span id="remainingAmt"></span> Remaining Today</b></h3>
+				<h4 id="weeklyIndicatorDescription">
+					<b>$<span id="spentDay">{{spentToday}}</span></b> Spent
+					| <b>$<span id="budgetDay"></span></b> Daily Budget
+					<br>
 				</h4>
 			</div>
 			<!-- End of weekly indicator description -->
 
-    	<div class="row" style="height: 475px">
-    		<div class="indicatorContainer">
+			<div class="row">
+				<div class="indicatorContainer">
 					<div id="divCircle" class="c100 p0 huge green">
 						<span id="weeklyIndicatorNum"></span>
 						<div class="slice">
-					  		<div class="bar"></div>
-					  		<div class="fill"></div>
+							<div class="bar"></div>
+							<div class="fill"></div>
 						</div>
 					</div>
 				</div>
 
 				<div class="btnContainer">
-	        <a class="btn-primary" href="#" data-toggle="modal" data-target="#myModal">+ Add Spending</a>
+					<a class="btn-primary" href="#" data-toggle="modal" data-target="#myModal">+ Add Spending</a>
 
-	  			<!-- Modal -->
+					<!-- Modal -->
 					<div class="modal fade" id="myModal" role="dialog">
-					  <div class="modal-dialog">
+						<div class="modal-dialog">
 
-					    <!-- Modal content-->
-					    <div class="modal-content">
-					      <div class="modal-header">
-					        <button type="button" class="close" data-dismiss="modal">&times;</button>
-					        <h4 class="modal-title">Add Spending</h4>
-					      </div>
-					      <div class="modal-body">
+							<!-- Modal content-->
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+									<h4 class="modal-title">Add Spending</h4>
+								</div>
+								<div class="modal-body">
 									<form class="form-horizontal" role="form" method="get" action="/addTransaction">
 										<div class="form-group">
 											<label for="nameTransaction">Transaction Name</label>
@@ -134,64 +134,76 @@
 											<label for "category"> Category </label>
 											<div class="col-sm-10">
 												<select class="form-control" id="category" name="category">
-												    <option>Meals/Drinks</option>
-												    <option>Necessities</option>
-														<option>Entertainment</option>
-														<option>Transportation</option>
-														<option>Personal Care </option>
+													<option>Meals/Drinks</option>
+													<option>Necessities</option>
+													<option>Entertainment</option>
+													<option>Transportation</option>
+													<option>Personal Care </option>
 												</select>
-										</div>
-										<br>
-										<input type="submit" id="submitBtn" class="btn btn-default" value="Add Transaction" onclick="alert('New transaction has been added');"></input>
-									</form>
-									<!-- This is where the modal form ends !-->
+											</div>
+											<br>
+											<input type="submit" id="submitBtn" class="btn btn-default" value="Add Transaction" onclick="alert('New transaction has been added');"></input>
+										</form>
+										<!-- This is where the modal form ends !-->
+									</div>
+
 								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								</div>
+							</div>
 
-					    </div>
-					      <div class="modal-footer">
-					        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					      </div>
-					    </div>
-
-					  </div>
+						</div>
 					</div>
-	      </div>
-     	</div>
-    	<hr>
-    	<div class="row" style="height: 375px">
-        		<h2 style="text-align: center;">Piggy Jr.</h2>
+				</div>
+				<br>
+			</div>
+		</section>
+
+		<section>
+			<div class="row">
+				<h2 class="section-header">Piggy Jr.</h2>
 				<div id ="avatar-image">
 					<img src="images/piggy-avatar.png" alt="Pig Avatar" height="60%" width="60%" style="display: block; margin: auto; padding-top: 10px">
-					<!--<h4 style="text-align: center;">Total Coins: 10</h4>!-->
 				</div>
+				<h4><b><span id="coinsAmt"></span></b> Piggy Coins</h4>
 				<br>
 				<div class="buttons">
 					<a class="btn-primary" id="closetBtn" href="/closet">Closet</a>
 					<a class="btn-primary" id="shopBtn" href="/shop">Shop</a>
 				</div>
-      </div>
-			<br>
-    	<hr>
-    	<div class="row" style="height: 200px">
-						<h3 id="daysLeft" style="text-align: center"></h3>
-						<h3 id="goalName" style="text-align: center;"></h3>
-
-						<div style="font-size: 16px; text-align: center">
-							<a id="editGoal" href="#">Edit goal</a> |
-							<a id="deleteGoal" href="#">Delete goal</a>
-						</div>
-
-						<div class="progress" style="width: 50%; margin: 0 auto">
-							<div id="goalProgress" class="progress-bar" role="progressbar" aria-valuenow="0"
-							aria-valuemin="0" aria-valuemax="" style="width: 0%">
-							</div>
-						</div>
-						<p id="savedDescription" style="text-align: center; margin-top: 5px"></p>
-      </div>
-
+				<br>
+				<br>
 			</div>
+		</section>
+
+		<section class="section-last">
+			<div class="row">
+				<br>
+				<h4 id="daysLeft"></h4>
+				<h3 class="colorNavy" id="goalName"></h3>
+
+				<p style="margin-top: 5px"><b>$0</b> / $<span id="savedDescription"></span> saved</p>
+
+				<div class="progress" style="width: 50%; margin: 0 auto">
+					<div id="goalProgress" class="progress-bar" role="progressbar" aria-valuenow="0"
+					aria-valuemin="0" aria-valuemax="">
+				</div>
+			</div>
+
+				<div>
+					<br>
+					<a id="editGoal" href="#">Edit goal</a> |
+					<a id="deleteGoal" href="#">Delete goal</a>
+				</div>
+				<br>
+
 		</div>
-		<script src="js/home.js"></script>
-		{{> googleAnalytics}}
-	</body>
+</section>
+	</div>
+
+</div>
+<script src="js/home.js"></script>
+{{> googleAnalytics}}
+</body>
 </html>
