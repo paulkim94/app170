@@ -157,7 +157,7 @@ function initializePage() {
 
 		console.log(daysRemaining);
 
-		goalDescription = "GOAL: I want to save $" + goalAmount +
+		goalDescription = "<b>GOAL:</b><br> I want to save $" + goalAmount +
 		" for " + goalName + " by " + goalDate + ".";
 
 		$(".goalDescription").html(goalDescription);
@@ -170,6 +170,11 @@ function initializePage() {
 
 		// The monthly available budget
 		var monthlyBudget = monthlyIncome - necessities - spentSoFar;
+		var monthlyIncomeDescription = "<b>MONTHLY INCOME:</b><br> $" + monthlyIncome + " per month";
+
+		var budgetDescription = "<b>MONTHLY SPENDING ALLOWANCE:</b><br> After paying for necessities, I have $" +
+		monthlyBudget + " left to spend each month.";
+
 		var oneDay = 24 * 60 * 60 * 1000;
 		var diffDays = Math.round(Math.abs((dateGoal.getTime() - today.getTime())/(oneDay)));
 
