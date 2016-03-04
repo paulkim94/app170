@@ -157,7 +157,7 @@ switch (mm) {
 
 		console.log(daysRemaining);
 
-		goalDescription = "GOAL: I want to save $" + goalAmount +
+		goalDescription = "<b>GOAL:</b><br> I want to save $" + goalAmount +
 		" for " + goalName + " by " + goalDate + ".";
 
 		$(".goalDescription").html(goalDescription);
@@ -171,9 +171,9 @@ switch (mm) {
 		// The monthly available budget
 		var monthlyBudget = monthlyIncome - necessities - spentSoFar;
 
-		var monthlyIncomeDescription = "MONTHLY INCOME: $" + monthlyIncome + " per month";
+		var monthlyIncomeDescription = "<b>MONTHLY INCOME:</b><br> $" + monthlyIncome + " per month";
 
-		var budgetDescription = "MONTHLY SPENDING ALLOWANCE: After paying for necessities, I have $" +
+		var budgetDescription = "<b>MONTHLY SPENDING ALLOWANCE:</b><br> After paying for necessities, I have $" +
 		monthlyBudget + " left to spend each month.";
 
 		var oneDay = 24 * 60 * 60 * 1000;

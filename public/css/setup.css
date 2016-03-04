@@ -4,25 +4,20 @@ html, body {
   margin: 0;
   padding: 0;
   text-align: center;
-  font-family: 'Roboto';
 }
 
 .hidden {
   display: none;
 }
 
-.btn-primary {
-  background-color: #333;
-  color: #fff;
-  font-size: 16px;
-  letter-spacing: 1.3px;
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: 15px 25px;
+.setup-info {
+  color: #00BED0;
 }
 
-.btnContainer {
-  margin-top: 30px;
-  padding: 15px 25px;
-  text-align: center;
+section {
+  padding: 0px 15px 15px 15px;
+}
+
+#avatar-image {
+  margin: 20px;
 }
