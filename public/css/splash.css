@@ -1,5 +1,6 @@
 .jumbotron {
-  background-image: url('../images/piggybank.jpg');
+  /*background-image: url('../images/piggybank.jpg');*/
+  background-color: #00BED0;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -13,8 +14,8 @@
   padding-top: 20px;
   margin: 0;
   font-family: "Montserrat", sans-serif;
-  color: #0064C8;
-  text-shadow: 0 0 30px white, 0 0 30px white, 0 0 20px white, 0 0 20px white, 0 0 30px white;
+  color: white;
+  /*text-shadow: 0 0 30px white, 0 0 30px white, 0 0 20px white, 0 0 20px white, 0 0 30px white;*/
 }
 
 .btn-primary a {

@@ -21,3 +21,21 @@ body{
     color: #fff;
     background: #3276B1;
 }
+
+#submitBtn {
+  border: none;
+  display: inline-block;
+}
+
+#loginBtn {
+  border: none;
+  display: inline-block;
+}
+
+.btn-space {
+  margin-right: 20px;
+}
+
+.move-left {
+  margin-left: -20%;
+}

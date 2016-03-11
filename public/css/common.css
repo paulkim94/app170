@@ -77,3 +77,11 @@ section {
   background-color: #9e005d;
   text-decoration: none;
 }
+
+.blue-button {
+  background-color: #00BED0;
+}
+
+.blue-button:hover {
+  background-color: #0076a3;
+}

@@ -20,7 +20,7 @@ $(document).ready(function(){
         $("#loginForm").removeAttr("action"); // remove if problems occur
       }
       else {
-        alert('Thank you for signing up. We will take you to the setup page now');
+        alert('Thanks for signing up! Let\'s get you started with Piggy.');
       }
     });
 
