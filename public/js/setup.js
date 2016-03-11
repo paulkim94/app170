@@ -83,8 +83,8 @@ function initializePage() {
 			return;
 		}
 
-		$(".setup2").addClass("hidden");
-		$(".setup3").removeClass("hidden");
+		//$(".setup2").addClass("hidden");
+		//$(".setup3").removeClass("hidden");
 
 		/* To be added on summary portion of setup */
 
@@ -97,54 +97,54 @@ function initializePage() {
 			return new Date(year, month, 0).getDate();
 		}
 
-/* Actual date */
-var today = new Date();
-var dd = today.getDate();
-var mm = today.getMonth() + 1;
-var yyyy = today.getFullYear();
+	/* Actual date */
+	var today = new Date();
+	var dd = today.getDate();
+	var mm = today.getMonth() + 1;
+	var yyyy = today.getFullYear();
 
-console.log(today);
+	console.log(today);
 
-/*Convert month to string*/
-var currentMonth;
-switch (mm) {
-	case 1:
-	currentMonth = "January";
-	break;
-	case 2:
-	currentMonth = "February";
-	break;
-	case 3:
-	currentMonth = "March";
-	break;
-	case 4:
-	currentMonth = "April";
-	break;
-	case 5:
-	currentMonth = "May";
-	break;
-	case 6:
-	currentMonth = "June";
-	break;
-	case 7:
-	currentMonth = "July";
-	break;
-	case 8:
-	currentMonth = "August";
-	break;
-	case 9:
-	currentMonth = "September";
-	break;
-	case 10:
-	currentMonth = "October";
-	break;
-	case 11:
-	currentMonth = "November";
-	break;
-	case 12:
-	currentMonth = "December";
-	break;
-}
+	/*Convert month to string*/
+	var currentMonth;
+	switch (mm) {
+		case 1:
+		currentMonth = "January";
+		break;
+		case 2:
+		currentMonth = "February";
+		break;
+		case 3:
+		currentMonth = "March";
+		break;
+		case 4:
+		currentMonth = "April";
+		break;
+		case 5:
+		currentMonth = "May";
+		break;
+		case 6:
+		currentMonth = "June";
+		break;
+		case 7:
+		currentMonth = "July";
+		break;
+		case 8:
+		currentMonth = "August";
+		break;
+		case 9:
+		currentMonth = "September";
+		break;
+		case 10:
+		currentMonth = "October";
+		break;
+		case 11:
+		currentMonth = "November";
+		break;
+		case 12:
+		currentMonth = "December";
+		break;
+	}
 
 		/* Number of days remaining this month */
 		var daysRemaining = getDaysInMonth(mm, yyyy) - dd;
@@ -170,7 +170,6 @@ switch (mm) {
 
 		// The monthly available budget
 		var monthlyBudget = monthlyIncome - necessities - spentSoFar;
-
 		var monthlyIncomeDescription = "<b>MONTHLY INCOME:</b><br> $" + monthlyIncome + " per month";
 
 		var budgetDescription = "<b>MONTHLY SPENDING ALLOWANCE:</b><br> After paying for necessities, I have $" +
@@ -181,6 +180,17 @@ switch (mm) {
 
 		localStorage.setItem("daysLeft", diffDays);
 		console.log(diffDays);
+
+		// Based on monthly available budget, check if they can save money per day
+		if( ((monthlyBudget / daysRemaining) - (goalAmount / diffDays)) < 0 ) {
+			alert("Your savings goal amount is too high based on your financial situation. Please change the amount or deadline");
+			return;
+		}
+
+		var monthlyIncomeDescription = "MONTHLY INCOME: $" + monthlyIncome + " per month";
+
+		var budgetDescription = "MONTHLY SPENDING ALLOWANCE: After paying for necessities, I have $" +
+		monthlyBudget + " left to spend each month.";
 
 		var savingsDescription = "After this month, you need to save $" +
 		(goalAmount / diffDays).toFixed(2) +

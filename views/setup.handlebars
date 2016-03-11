@@ -49,13 +49,13 @@
         <h4 class="section-header">Step 1: Tell us about your monthly financial situation.</h4>
         <form>
           <p>What is your income per month?</p>
-            <input type="number" id="monthlyIncome" name="monthlyIncome" placeholder="$ Enter an amount">
+            <input type="number" step = "0.01" id="monthlyIncome" name="monthlyIncome" placeholder="$ Enter an amount">
             <br><br> <!-- add margins in css later and remove <br> -->
           <p>How much goes towards necessities (rent, utilities, groceries, insurance, fees, etc.)?</p>
             <input type="number" id="necessities" name="necessities" placeholder="$ Enter an amount">
             <br><br> <!-- add margins in css later and remove <br> -->
           <p>How much did you spend this month so far EXCLUDING necessities?</p>
-            <input type="number" id="spentSoFar" name="spentSoFar" placeholder="$ Enter an amount">
+            <input type="number" id="spentSoFar" step="0.01" name="spentSoFar" placeholder="$ Enter an amount">
         </form>
         <div class="btnContainer">
           <a class="btn-primary" id="nextButton1" href="#">Next &rsaquo;</a>
@@ -71,7 +71,7 @@
             <input type="text" id="goalName" name="goalName" placeholder="Name your goal">
             <br><br>
           <p>How much will it cost?</p>
-            <input type="number" id="goalAmount" name="goalAmount" placeholder="$ Enter an amount">
+            <input type="number" step = "0.01"id="goalAmount" name="goalAmount" placeholder="$ Enter an amount">
             <br><br>
           <p>When do you need to finish saving by?</p>
             <input type="text" id="date" name="goalDate" placeholder="Date">
